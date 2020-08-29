@@ -108,7 +108,8 @@ public class main {
 		int key = scan.nextInt();
 		
 		switch(key) {
-			case 1:				
+			case 1:
+				createStudent();
 				break;
 			case 2:
 				break;
