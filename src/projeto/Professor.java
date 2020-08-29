@@ -4,6 +4,7 @@ public class Professor extends Person {
     private String salary;
     private String filiation;
     private String federation;
+    private int id;
 
     public Professor(
         String name,
@@ -26,7 +27,8 @@ public class Professor extends Person {
         int code,
         String salary,
         String filiation,
-        String federation
+        String federation,
+        int id
         ){
         super(
             name,
@@ -51,6 +53,7 @@ public class Professor extends Person {
         this.salary = salary;
         this.filiation = filiation;
         this.federation = federation;
+        this.id = id;
     }
 
     public String getSalary(){
@@ -75,6 +78,10 @@ public class Professor extends Person {
 
     public void setFederation(String newFederation){
         this.federation = newFederation;
+    }
+
+    public int getId(){
+      return this.id;
     }
 
 }

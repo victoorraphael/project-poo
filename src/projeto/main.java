@@ -26,7 +26,14 @@ public class main {
 	public static int code;
 	public static String grade;
 	public static int idStudent;
-	static ArrayList<Student> students = new ArrayList<>();
+  public static String modality;
+	public static String salary;
+	public static String filiation;
+	public static String federation;
+  static ArrayList<Student> students = new ArrayList<>();
+  static ArrayList<MartialArt> martialArt = new ArrayList<>();
+  static ArrayList<Professor> professors = new ArrayList<>();
+	static int professorId = 0;
 	
 	public static void formPerson() {
 		scan.nextLine();
@@ -68,6 +75,41 @@ public class main {
 		code = scan.nextInt();
 	}
 	
+	public static void createProfessor() {
+		formPerson();
+		System.out.println("Insira o salário do Professor: ");
+		salary = scan.nextLine();
+		System.out.println("Insira a filiação do Professor: ");
+		filiation = scan.nextLine();
+		System.out.println("Insira a federação do Professor: ");
+		federation = scan.nextLine();
+		professorId += 1;
+		professors.add(new Professor(
+								name,
+								birth,
+								graduation,
+								cpf,
+								street,
+								neighbour,
+								city,
+								zip,
+								number,
+								complement,
+								email,
+								phone,
+								isWhatsapp,
+								gender,
+								category,
+								weight,
+								height,
+								code,
+								salary,
+								filiation,
+								federation,
+								professorId
+								));
+	}
+
 	public static void createStudent() {
 		formPerson();
 		System.out.println("Insira o Grau do Aluno: ");
@@ -95,7 +137,80 @@ public class main {
 								idStudent
 								));
 	}
-	
+  public static void createMartialArt() {
+
+		System.out.println("Insira o modalidade que deseja: ");
+		modality = scan.nextLine();
+		martialArt.add(new MartialArt(modality)); 
+  }
+
+  public static void createClassroom(ArrayList<Student> students, ArrayList<Professor> professors){
+    System.out.println("Digite ");
+  } 
+
+
+  public static void createPlan() {
+    
+  }
+
+  public static void updateMartialArt() {
+
+    System.out.println("Insira a modalidade que deseja alterar: ");
+    modality = scan.nextLine();
+    martialArt.forEach(martial -> {
+      String mod = martial.getModality();
+      
+      if(mod.equals(modality)){
+        System.out.println("Insira a nova modalidade: ");
+        String newModality = scan.nextLine();
+        martial.setModality(newModality);
+      }
+    });
+	}
+  
+  public static void deleteMartialArt(){
+    System.out.println("Insira a modalidade que deseja deletar: ");
+    modality = scan.nextLine();
+    martialArt.forEach(martial -> {
+      String mod = martial.getModality();
+      
+      if(mod.equals(modality)){
+        martialArt.remove(mod);
+      }
+    });
+  }
+
+  public static void subMenu(func1, func2, func3, func4, func5) {
+    System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+        System.out.println("1. Aluno");
+        System.out.println("2. Professor");
+        System.out.println("3. Turma");
+        System.out.println("4. Arte Marcial");
+        System.out.println("5. Planos");
+        int secondaryKey = scan.nextInt();
+        
+        switch(secondaryKey){
+          case 1:
+            func1();
+            break;
+          case 2:
+            func2();
+            break;
+          case 3:
+            func3();
+            break;
+          case 4:
+            func4();
+            break;
+          case 5:
+            func5();
+            break;
+          default:
+            System.out.println("Escolha uma opção válida!");
+            break;
+        }
+  }
+
 	public static void main(String[] args) {
 		
 		System.out.println("========== MENU ==========");
@@ -108,9 +223,10 @@ public class main {
 		
 		switch(key) {
 			case 1:
-				createStudent();
+        subMenu(createStudent, createProfessor, createClassroom, createMartialArt, createPlan);
 				break;
 			case 2:
+        
 				break;
 			case 3:
 				break;
