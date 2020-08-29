@@ -27,6 +27,7 @@ public class main {
 	public static String grade;
 	public static int idStudent;
 	static ArrayList<Student> students = new ArrayList<>();
+	static ArrayList<MartialArt> martialArt = new ArrayList<>();
 	
 	
 	public static void formPerson() {
@@ -96,6 +97,13 @@ public class main {
 								idStudent
 								));
 	}
+	
+	public static void createMartialArt() {
+
+		System.out.println("Insira o modalidade que deseja: ");
+		String modality = scan.nextLine();
+		martialArt.add(new MartialArt(modality)); 
+	 }
 	
 	public static void main(String[] args) {
 		
