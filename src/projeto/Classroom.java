@@ -1,4 +1,4 @@
-package Main;
+package projeto;
 
 public class Classroom {
 

@@ -1,4 +1,4 @@
-package Main;
+package projeto;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -27,7 +27,6 @@ public class main {
 	public static String grade;
 	public static int idStudent;
 	static ArrayList<Student> students = new ArrayList<>();
-	
 	
 	public static void formPerson() {
 		scan.nextLine();
