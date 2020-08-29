@@ -53,7 +53,7 @@ public class main {
     });
     }catch (Exception erro){
        System.out.println("ERRO! Item não cadastrado")
-       int 
+        
 
       }
     } while(!flag);
@@ -123,19 +123,19 @@ public class main {
         
         switch(secondaryKey){
           case 1:
-            updateStudent();
+            Update.student();
             break;
           case 2:
-            updateProfessor();
+            Update.professor();
             break;
           case 3:
-            updateClassroom();
+            Update.classroom();
             break;
           case 4:
-            updateMartialArt();
+            Update.martialArt();
             break;
           case 5:
-            updatePlan();
+            Update.plan();
             break;
           default:
             System.out.println("Escolha uma opção válida!");
@@ -153,19 +153,19 @@ public class main {
         
         switch(secondaryKey){
           case 1:
-            getStudent();
+            Get.student();
             break;
           case 2:
-            getProfessor();
+            Get.professor();
             break;
           case 3:
-            getClassroom();
+            Get.classroom();
             break;
           case 4:
-            getMartialArt();
+            Get.martialArt();
             break;
           case 5:
-            getPlan();
+            Get.plan();
             break;
           default:
             System.out.println("Escolha uma opção válida!");
@@ -183,19 +183,19 @@ public class main {
         
         switch(secondaryKey){
           case 1:
-            deleteStudent();
+            Delete.student();
             break;
           case 2:
-            deleteProfessor();
+            Delete.professor();
             break;
           case 3:
-            deleteClassroom();
+            Delete.classroom();
             break;
           case 4:
-            deleteMartialArt();
+            Delete.martialArt();
             break;
           case 5:
-            deletePlan();
+            Delete.plan();
             break;
           default:
             System.out.println("Escolha uma opção válida!");

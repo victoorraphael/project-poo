@@ -1,7 +1,7 @@
-public class Update{
+public class Delete{
 
   public static void student(){
-    
+
   }
 
   public static void professor(){
@@ -17,6 +17,6 @@ public class Update{
   }
 
   public static void plan(){
-
+    
   }
 }
