@@ -1,6 +1,6 @@
-package Main;
+package projeto;
 
-public abstract class Person {
+public abstract class Person implements Iperson {
 
 	private String name; 
 	private String birth; 
@@ -61,7 +61,7 @@ public abstract class Person {
 		this.code = code;
 	}
 
-
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -84,7 +84,8 @@ public abstract class Person {
 	public void setGraduation(String graduation) {
 		this.graduation = graduation;
 	}
-
+	
+	@Override
 	public String getCpf() {
 		return cpf;
 	}
@@ -133,6 +134,7 @@ public abstract class Person {
 		this.complement = complement;
 	}
 
+	@Override
 	public String getEmail() {
 		return email;
 	}
@@ -188,8 +190,9 @@ public abstract class Person {
 	public void setHeight(String height) {
 		this.height = height;
 	}
-
-	public Integer getCode() {
+	
+	@Override
+	public int getCode() {
 		return code;
 	}
 
