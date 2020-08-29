@@ -33,12 +33,13 @@ public class main {
 	static ArrayList<Student> students = new ArrayList<>();
 	static ArrayList<MartialArt> martialArt = new ArrayList<>();
 	static ArrayList<Professor> professors = new ArrayList<>();
+  static ArrayList<Plans> plans = new ArrayList<>();
+  static ArrayList<Classroom> classrooms = new ArrayList<>();
 	static int professorId = 0;
 
   public static void updateMartialArt() {
     Boolean flag = false;
     do{
-    try{
     System.out.println("Insira a modalidade que deseja alterar: ");
     modality = scan.nextLine();
     martialArt.forEach(martial -> {
@@ -49,13 +50,16 @@ public class main {
         String newModality = scan.nextLine();
         martial.setModality(newModality);
         flag = true;
+      } else {
+        System.out.println("ERRO! Item não cadastrado");
+        System.out.println("1 - Tentar novamente");
+        System.out.println("0 - Sair");
+        int option = scan.nextInt();
+        if (option == 0){
+            flag = true;
+        }
       }
-    });
-    }catch (Exception erro){
-       System.out.println("ERRO! Item não cadastrado");
-        
-
-      }
+    });   
     } while(!flag);
 	}
   
@@ -123,13 +127,23 @@ public class main {
 		        
 		        switch(secondaryKey){
 		          case 1:
-		            Update.student();
+                System.out.println("Digite o nome do Aluno: ");
+                name = scan.nextInt();
+		            Update.student(name, students);
 		            break;
 		          case 2:
-		            Update.professor();
+                System.out.println("Digite o nome do Professor: ");
+                name = scan.nextInt();
+		            Update.professor(name, professors);
 		            break;
 		          case 3:
-		            Update.classroom();
+                System.out.println("Digite o id da Turma: ");
+                String idClass = scan.nextLine();
+                System.out.println("Digite o nome do novo Professor: ");
+                String newProf = scan.nextLine();
+                System.out.println("Digite a arte marcial da Turma: ");
+                String newMartial = scan.nextLine();
+		            Update.classroom(idClass, newProf, newMartial, classrooms);
 		            break;
 		          case 4:
 		            Update.martialArt();

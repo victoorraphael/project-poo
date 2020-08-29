@@ -141,7 +141,24 @@ public class Create{
 
   public static void classroom(ArrayList<Student> students, ArrayList<Professor> professors){
     System.out.println("Digite o nome do professor");
+    name_professor = scan.nextLine();
+    Boolean flag = verifyProfessor(students, professors);
+    while(!(flag){
+      System.out.println("Esse professor não existe, deseja tentar novamente. [Y/N]");
+      op = scan.nextLine
+      
+    }
     
+  }
+
+
+  public static Boolean verifyProfessor(ArrayList<Professor> professors, String name){
+    for(Professor p : professors) {
+			if(p.getName().equals(name)) {
+				return true;
+			}
+		}
+    return false;
   } 
 
   public static void plan() {

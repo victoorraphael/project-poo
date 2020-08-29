@@ -2,8 +2,8 @@ package projeto;
 
 public class Get{
 
-  public static void student(){
-
+  public static void student(String name){
+    
   }
 
   public static void professor(){
