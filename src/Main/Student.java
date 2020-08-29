@@ -36,5 +36,8 @@ public class Student extends Person{
 		this.idStudent = idStudent;
 	}
 
+	public void matricular() {
+		
+	}
 
 }
