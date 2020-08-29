@@ -1,3 +1,5 @@
+package projeto;
+
 public class Delete{
 
   public static void student(){

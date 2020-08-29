@@ -1,3 +1,5 @@
+package projeto;
+
 public class Create{
 
   static Scanner scan = new Scanner(System.in);

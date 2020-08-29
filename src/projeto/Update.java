@@ -1,7 +1,9 @@
+package projeto;
+
 public class Update{
 
   public static void student(){
-    
+
   }
 
   public static void professor(){

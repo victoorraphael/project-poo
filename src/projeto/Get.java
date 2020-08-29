@@ -1,3 +1,5 @@
+package projeto;
+
 public class Get{
 
   public static void student(){
