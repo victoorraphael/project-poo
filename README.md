@@ -1,1 +1,1 @@
-# project-poo
+# Projeto para disciplina de LPOO
