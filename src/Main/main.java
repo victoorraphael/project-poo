@@ -26,8 +26,49 @@ public class main {
 	public static int code;
 	public static String grade;
 	public static int idStudent;
+	public static String salary;
+	public static String filiation;
+	public static String federation;
 	static ArrayList<Student> students = new ArrayList<>();
-	
+	static ArrayList<Professor> professors = new ArrayList<>();
+	static int professorId = 0;
+
+
+	public static void createProfessor() {
+		formPerson();
+		System.out.println("Insira o salÃ¡rio do Professor: ");
+		salary = scan.nextLine();
+		System.out.println("Insira a filiaÃ§Ã£o do Professor: ");
+		filiation = scan.nextLine();
+		System.out.println("Insira a federaÃ§Ã£o do Professor: ");
+		federation = scan.nextLine();
+		professorId += 1;
+		professors.add(new Professor(
+								name,
+								birth,
+								graduation,
+								cpf,
+								street,
+								neighbour,
+								city,
+								zip,
+								number,
+								complement,
+								email,
+								phone,
+								isWhatsapp,
+								gender,
+								category,
+								weight,
+								height,
+								code,
+								salary,
+								filiation,
+								federation,
+								professorId
+								));
+	}
+
 	
 	public static void formPerson() {
 		scan.nextLine();
@@ -37,7 +78,7 @@ public class main {
 		birth = scan.nextLine();
 		System.out.println("Insira seu Telefone:");
 		phone = scan.nextLine();
-		System.out.println("É Whatsapp [Y/N]:");
+		System.out.println("ï¿½ Whatsapp [Y/N]:");
 		isWhatsapp = scan.nextBoolean();
 		System.out.println("Insira o seu Email:");
 		email = scan.nextLine();
@@ -51,13 +92,13 @@ public class main {
 		height = scan.nextLine();
 		System.out.println("Insira sua Categoria:");
 		category = scan.nextLine();
-		System.out.println("Insira sua Gradução:");
+		System.out.println("Insira sua Graduï¿½ï¿½o:");
 		graduation = scan.nextLine();
 		System.out.println("Insira seu CEP:");
 		zip = scan.nextLine();
 		System.out.println("Insira o Logradouro:");
 		street = scan.nextLine();
-		System.out.println("Insira o Número:");
+		System.out.println("Insira o Nï¿½mero:");
 		number = scan.nextLine();
 		System.out.println("Insira seu Bairro:");
 		neighbour = scan.nextLine();
@@ -65,7 +106,7 @@ public class main {
 		complement = scan.nextLine();
 		System.out.println("Insira sua Cidade:");
 		city = scan.nextLine();
-		System.out.println("Código de verificação:");
+		System.out.println("Cï¿½digo de verificaï¿½ï¿½o:");
 		code = scan.nextInt();
 	}
 	
