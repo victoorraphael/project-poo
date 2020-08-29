@@ -34,128 +34,11 @@ public class main {
   static ArrayList<MartialArt> martialArt = new ArrayList<>();
   static ArrayList<Professor> professors = new ArrayList<>();
 	static int professorId = 0;
-	
-	public static void formPerson() {
-		scan.nextLine();
-		System.out.println("Insira o Nome Completo:");
-		name = scan.nextLine();
-		System.out.println("Insira sua Data de Nascimento:");
-		birth = scan.nextLine();
-		System.out.println("Insira seu Telefone:");
-		phone = scan.nextLine();
-		System.out.println("eh Whatsapp [Y/N]:");
-		isWhatsapp = scan.nextBoolean();
-		System.out.println("Insira o seu Email:");
-		email = scan.nextLine();
-		System.out.println("Insira seu CPF:");
-		cpf = scan.nextLine();
-		System.out.println("Insira seu Sexo:");
-		gender = scan.nextLine();
-		System.out.println("Insira seu Peso:");
-		weight = scan.nextLine();
-		System.out.println("Insira sua Altura:");
-		height = scan.nextLine();
-		System.out.println("Insira sua Categoria:");
-		category = scan.nextLine();
-		System.out.println("Insira sua Graduacao:");
-		graduation = scan.nextLine();
-		System.out.println("Insira seu CEP:");
-		zip = scan.nextLine();
-		System.out.println("Insira o Logradouro:");
-		street = scan.nextLine();
-		System.out.println("Insira o Numero:");
-		number = scan.nextLine();
-		System.out.println("Insira seu Bairro:");
-		neighbour = scan.nextLine();
-		System.out.println("Insira o Complemento:");
-		complement = scan.nextLine();
-		System.out.println("Insira sua Cidade:");
-		city = scan.nextLine();
-		System.out.println("Codigo de verificacao:");
-		code = scan.nextInt();
-	}
-	
-	public static void createProfessor() {
-		formPerson();
-		System.out.println("Insira o salário do Professor: ");
-		salary = scan.nextLine();
-		System.out.println("Insira a filiação do Professor: ");
-		filiation = scan.nextLine();
-		System.out.println("Insira a federação do Professor: ");
-		federation = scan.nextLine();
-		professorId += 1;
-		professors.add(new Professor(
-								name,
-								birth,
-								graduation,
-								cpf,
-								street,
-								neighbour,
-								city,
-								zip,
-								number,
-								complement,
-								email,
-								phone,
-								isWhatsapp,
-								gender,
-								category,
-								weight,
-								height,
-								code,
-								salary,
-								filiation,
-								federation,
-								professorId
-								));
-	}
-
-	public static void createStudent() {
-		formPerson();
-		System.out.println("Insira o Grau do Aluno: ");
-		grade = scan.nextLine();
-		students.add(new Student(
-								name,
-								birth,
-								graduation,
-								cpf,
-								street,
-								neighbour,
-								city,
-								zip,
-								number,
-								complement,
-								email,
-								phone,
-								isWhatsapp,
-								gender,
-								category,
-								weight,
-								height,
-								code,
-								grade,
-								idStudent
-								));
-	}
-  public static void createMartialArt() {
-
-		System.out.println("Insira o modalidade que deseja: ");
-		modality = scan.nextLine();
-		martialArt.add(new MartialArt(modality)); 
-  }
-
-  public static void createClassroom(ArrayList<Student> students, ArrayList<Professor> professors){
-    System.out.println("Digite o nome do professor");
-    
-  } 
-
-
-  public static void createPlan() {
-    
-  }
 
   public static void updateMartialArt() {
-
+    Boolean flag = false;
+    do{
+    try{
     System.out.println("Insira a modalidade que deseja alterar: ");
     modality = scan.nextLine();
     martialArt.forEach(martial -> {
@@ -165,8 +48,15 @@ public class main {
         System.out.println("Insira a nova modalidade: ");
         String newModality = scan.nextLine();
         martial.setModality(newModality);
+        flag = true;
       }
     });
+    }catch (Exception erro){
+       System.out.println("ERRO! Item não cadastrado")
+       int 
+
+      }
+    } while(!flag);
 	}
   
   public static void deleteMartialArt(){
@@ -179,10 +69,6 @@ public class main {
         martialArt.remove(mod);
       }
     });
-  }
-
-  public static void subMenu(func1, func2, func3, func4, func5) {
-    
   }
 
 	public static void main(String[] args) {
@@ -207,19 +93,19 @@ public class main {
         
         switch(secondaryKey){
           case 1:
-            createStudent();
+            Create.student();
             break;
           case 2:
-            createProfessor();
+            Create.professor();
             break;
           case 3:
-            createClassroom();
+            Create.classroom();
             break;
           case 4:
-            createMartialArt();
+            Create.martialArt();
             break;
           case 5:
-            createPlan();
+            Create.plan();
             break;
           default:
             System.out.println("Escolha uma opção válida!");
