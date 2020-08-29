@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
-
+  
 	static Scanner scan = new Scanner(System.in);
 	public static String name;
 	public static String birth;
@@ -36,7 +36,7 @@ public class main {
 		birth = scan.nextLine();
 		System.out.println("Insira seu Telefone:");
 		phone = scan.nextLine();
-		System.out.println("É Whatsapp [Y/N]:");
+		System.out.println("eh Whatsapp [Y/N]:");
 		isWhatsapp = scan.nextBoolean();
 		System.out.println("Insira o seu Email:");
 		email = scan.nextLine();
@@ -50,13 +50,13 @@ public class main {
 		height = scan.nextLine();
 		System.out.println("Insira sua Categoria:");
 		category = scan.nextLine();
-		System.out.println("Insira sua Gradução:");
+		System.out.println("Insira sua Graduacao:");
 		graduation = scan.nextLine();
 		System.out.println("Insira seu CEP:");
 		zip = scan.nextLine();
 		System.out.println("Insira o Logradouro:");
 		street = scan.nextLine();
-		System.out.println("Insira o Número:");
+		System.out.println("Insira o Numero:");
 		number = scan.nextLine();
 		System.out.println("Insira seu Bairro:");
 		neighbour = scan.nextLine();
@@ -64,7 +64,7 @@ public class main {
 		complement = scan.nextLine();
 		System.out.println("Insira sua Cidade:");
 		city = scan.nextLine();
-		System.out.println("Código de verificação:");
+		System.out.println("Codigo de verificacao:");
 		code = scan.nextInt();
 	}
 	

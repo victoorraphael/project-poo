@@ -2,39 +2,19 @@ package projeto;
 
 public class MartialArt {
 
-	private String jiuJitsu;
-	private String muayThai;
-	private String kickBox;
+	private String modality;
 
-	public MartialArt(String jiuJitsu, String muayThai, String kickBox) {
+	public MartialArt(String modality) {
 
-		this.jiuJitsu = jiuJitsu;
-		this.muayThai = muayThai;
-		this.kickBox = kickBox;
+		this.modality = modality;
+
 	}
 
-	public String getJiuJitsu() {
-		return jiuJitsu;
+	public String getModality() {
+		return modality;
 	}
 
-	public void setJiuJitsu(String jiuJitsu) {
-		this.jiuJitsu = jiuJitsu;
+	public void setModality(String modality) {
+		this.modality = modality;
 	}
-
-	public String getMuayThai() {
-		return muayThai;
-	}
-
-	public void setMuayThai(String muayThai) {
-		this.muayThai = muayThai;
-	}
-
-	public String getKickBox() {
-		return kickBox;
-	}
-
-	public void setKickBox(String kickBox) {
-		this.kickBox = kickBox;
-	}
-
 }
