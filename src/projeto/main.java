@@ -128,7 +128,7 @@ public class main {
 		        switch(secondaryKey){
 		          case 1:
                 System.out.println("Digite o nome do Aluno: ");
-                name = scan.nextInt();
+                name = scan.nextLine();
 		            Update.student(name, students);
 		            break;
 		          case 2:
