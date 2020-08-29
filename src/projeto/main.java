@@ -145,7 +145,8 @@ public class main {
   }
 
   public static void createClassroom(ArrayList<Student> students, ArrayList<Professor> professors){
-    System.out.println("Digite ");
+    System.out.println("Digite o nome do professor");
+    
   } 
 
 
@@ -181,34 +182,7 @@ public class main {
   }
 
   public static void subMenu(func1, func2, func3, func4, func5) {
-    System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
-        System.out.println("1. Aluno");
-        System.out.println("2. Professor");
-        System.out.println("3. Turma");
-        System.out.println("4. Arte Marcial");
-        System.out.println("5. Planos");
-        int secondaryKey = scan.nextInt();
-        
-        switch(secondaryKey){
-          case 1:
-            func1();
-            break;
-          case 2:
-            func2();
-            break;
-          case 3:
-            func3();
-            break;
-          case 4:
-            func4();
-            break;
-          case 5:
-            func5();
-            break;
-          default:
-            System.out.println("Escolha uma opção válida!");
-            break;
-        }
+    
   }
 
 	public static void main(String[] args) {
@@ -223,14 +197,124 @@ public class main {
 		
 		switch(key) {
 			case 1:
-        subMenu(createStudent, createProfessor, createClassroom, createMartialArt, createPlan);
+        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+        System.out.println("1. Aluno");
+        System.out.println("2. Professor");
+        System.out.println("3. Turma");
+        System.out.println("4. Arte Marcial");
+        System.out.println("5. Planos");
+        int secondaryKey = scan.nextInt();
+        
+        switch(secondaryKey){
+          case 1:
+            createStudent();
+            break;
+          case 2:
+            createProfessor();
+            break;
+          case 3:
+            createClassroom();
+            break;
+          case 4:
+            createMartialArt();
+            break;
+          case 5:
+            createPlan();
+            break;
+          default:
+            System.out.println("Escolha uma opção válida!");
+            break;
+        }
 				break;
 			case 2:
+        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+        System.out.println("1. Aluno");
+        System.out.println("2. Professor");
+        System.out.println("3. Turma");
+        System.out.println("4. Arte Marcial");
+        System.out.println("5. Planos");
+        int secondaryKey = scan.nextInt();
         
+        switch(secondaryKey){
+          case 1:
+            updateStudent();
+            break;
+          case 2:
+            updateProfessor();
+            break;
+          case 3:
+            updateClassroom();
+            break;
+          case 4:
+            updateMartialArt();
+            break;
+          case 5:
+            updatePlan();
+            break;
+          default:
+            System.out.println("Escolha uma opção válida!");
+            break;
+        }
 				break;
 			case 3:
+        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+        System.out.println("1. Aluno");
+        System.out.println("2. Professor");
+        System.out.println("3. Turma");
+        System.out.println("4. Arte Marcial");
+        System.out.println("5. Planos");
+        int secondaryKey = scan.nextInt();
+        
+        switch(secondaryKey){
+          case 1:
+            getStudent();
+            break;
+          case 2:
+            getProfessor();
+            break;
+          case 3:
+            getClassroom();
+            break;
+          case 4:
+            getMartialArt();
+            break;
+          case 5:
+            getPlan();
+            break;
+          default:
+            System.out.println("Escolha uma opção válida!");
+            break;
+        }
 				break;
 			case 4:
+        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+        System.out.println("1. Aluno");
+        System.out.println("2. Professor");
+        System.out.println("3. Turma");
+        System.out.println("4. Arte Marcial");
+        System.out.println("5. Planos");
+        int secondaryKey = scan.nextInt();
+        
+        switch(secondaryKey){
+          case 1:
+            deleteStudent();
+            break;
+          case 2:
+            deleteProfessor();
+            break;
+          case 3:
+            deleteClassroom();
+            break;
+          case 4:
+            deleteMartialArt();
+            break;
+          case 5:
+            deletePlan();
+            break;
+          default:
+            System.out.println("Escolha uma opção válida!");
+            break;
+        }
 				break;
 			default:
 				break;
