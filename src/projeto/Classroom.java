@@ -6,7 +6,6 @@ public class Classroom {
 	
 	
 	public Classroom(int id, Professor professor, ArrayList<Student> student, MartialArt modality, String schedule) {
-		super();
 		this.id = id;
 		this.professor = professor;
 		this.student = student;
@@ -52,7 +51,5 @@ public class Classroom {
 	public void setSchedule(String schedule) {
 		this.schedule = schedule;
 	}
-	
-	
-	
+
 }

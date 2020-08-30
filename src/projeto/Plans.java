@@ -1,37 +1,48 @@
 package projeto;
 
-public class Plans {
-	private double price;
-  private String period;
-  private Boolean promocode;
-
-  public Plans(String price, String period, Boolean promocode) {
-    this.price = price;
-    this.period = period;
-    this.promocode = promocode;
-  }
+  public class Plans {
 	
-  public double getPrice(){
-    return price;
-  }
-  
-  public void setPrice(double price) {
-    this.price = price;
-  }
-  
-  public String getPeriod(){
-    return period;
-  }
+    private String name;
+    private double price;
+    private String period;
+    private int id;
 
-  public void setPeriod(String period){
-    this.period = period;
-  }
+    public Plans(String name, double price, String period, Boolean promocode, int id) {
+      this.name = name;
+      this.price = price;
+      this.period = period;
+      this.id = id;
+    }
+    
+    public String getName() {
+      return name;
+    }
+    
+    public void setName(String name) {
+      this.name = name;
+    }
 
-  public Boolean getPromocode(){
-    return promocode;
-  }
+    public double getPrice() {
+      return price;
+    }
 
-  public void setPromocode(Boolean promocode) {
-    this.promocode = promocode;
+    public void setPrice(double price) {
+      this.price = price;
+    }
+
+    public String getPeriod() {
+      return period;
+    }
+
+    public void setPeriod(String period) {
+      this.period = period;
+    }
+
+    public int getId() {
+      return id;
+    }
+    public void setId(int id) {
+      this.id = id;
+    }
   }
 }

@@ -1,7 +1,7 @@
 package projeto;
 
 public class Professor extends Person {
-    private String salary;
+    private double salary;
     private String filiation;
     private String federation;
     private int id;
@@ -25,7 +25,7 @@ public class Professor extends Person {
         String weight,
         String height,
         int code,
-        String salary,
+        double salary,
         String filiation,
         String federation,
         int id
@@ -56,11 +56,11 @@ public class Professor extends Person {
         this.id = id;
     }
 
-    public String getSalary(){
+    public double getSalary(){
         return this.salary;
     }
 
-    public void setSalary(String newSalary){
+    public void setSalary(double newSalary){
         this.salary = newSalary;
     }
 
