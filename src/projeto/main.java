@@ -117,10 +117,11 @@ public class main {
 		        switch(secondaryKey){
 		        	
 		          case 1:
-		            System.out.println("Digite o nome do aluno:");
-		            String name = scan.nextLine();
-		            Get.student(Repository.students, name);
-		            break;
+		        	  scan.nextLine();
+		        	  System.out.println("Digite o nome do aluno:");
+		        	  String name = scan.nextLine();
+		        	  Get.student(Repository.students, name);
+		        	  break;
 		          case 2:
 		        	  System.out.println("Digite o nome do aluno:");
 		        	  String prof = scan.nextLine();

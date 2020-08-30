@@ -12,6 +12,15 @@ public class Create{
   static int professorId = 0;
   public static int idStudent = 0;
   public static int id_classroom;
+  
+  public static boolean validateWpp(String isWhatsapp) {
+	  if(isWhatsapp.equals("y") || isWhatsapp.equals("Y")) {
+		  return true;
+	  } else if (isWhatsapp.contains("nN")) {
+		  return false; 
+	  }
+	  return false;
+  }
 
   public static void formPerson() {
 		scan.nextLine();
@@ -62,7 +71,7 @@ public class Create{
 		System.out.println("Insira seu Telefone:");
 		String phone = scan.nextLine();
 		System.out.println("eh Whatsapp [Y/N]:");
-		boolean isWhatsapp = scan.nextBoolean();
+		String isWhatsapp = scan.nextLine();
 		System.out.println("Insira o seu Email:");
 		String email = scan.nextLine();
 		System.out.println("Insira seu CPF:");
@@ -99,6 +108,7 @@ public class Create{
 		System.out.println("Insira a federação do Professor: ");
 		String federation = scan.nextLine();
 		professorId += 1;
+		boolean checkWpp = validateWpp(isWhatsapp);
 		professor = new Professor(
 								name,
 								birth,
@@ -112,7 +122,7 @@ public class Create{
 								complement,
 								email,
 								phone,
-								isWhatsapp,
+								checkWpp,
 								gender,
 								category,
 								weight,
@@ -175,14 +185,8 @@ public class Create{
 	scan.nextLine();
 	System.out.println("Insira o Grau do Aluno: ");
 	String grade = scan.nextLine();
-	boolean isWpp = false;
-	if(isWhatsapp.equals("y") || isWhatsapp.equals("Y")) {
-		isWhatsapp = "true";
-		isWpp = Boolean.parseBoolean(isWhatsapp);
-	} else if (isWhatsapp.contains("nN")) {
-		isWhatsapp = "false";
-		isWpp = Boolean.parseBoolean(isWhatsapp);
-	}
+	boolean checkWpp = validateWpp(isWhatsapp);
+	
 	student = new Student(
 							name,
 							birth,
@@ -196,7 +200,7 @@ public class Create{
 							complement,
 							email,
 							phone,
-							isWpp,
+							checkWpp,
 							gender,
 							category,
 							weight,
@@ -251,7 +255,7 @@ public class Create{
 		}
 		 
 	    while(!(flag)){
-	      System.out.println("Esse professor não existe, deseja tentar novamente. [Y/N]");
+	      System.out.println("Esse professor nao existe, deseja tentar novamente. [Y/N]");
 	      op = scan.nextLine();
 	      if((op.equals("y")) || (op.equals("Y"))) {
 	    	  System.out.println("Digite o nome do professor novamente: ");
