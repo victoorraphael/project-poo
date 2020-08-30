@@ -106,18 +106,22 @@ public class main {
 		        
 		        switch(secondaryKey){
 		          case 1:
-		            System.out.println("Digite o nome do aluno:")
-	            
-		            Get.student(Repository.students);
+		            System.out.println("Digite o nome do aluno:");
+		            String name = scan.nextLine();
+		            Get.student(Repository.students, name);
 		            break;
 		          case 2:
 		            Get.professor(Repository.professors);
 		            break;
 		          case 3:
-		            Get.classroom(Repository.classrooms);
+		        	  System.out.println("Digite o id da turma: ");
+		        	  int id = scan.nextInt();
+		            Get.classroom(Repository.classrooms, id);
 		            break;
 		          case 4:
-		            Get.martialArt(Repository.martialArts);
+		        	  System.out.println("Digite a modalidade da turma: ");
+		        	  String modality = scan.nextLine();
+		            Get.martialArt(Repository.martialArts, modality);
 		            break;
 		          case 5:
 		            Get.plan(Repository.plans);
@@ -141,19 +145,21 @@ public class main {
 		            Delete.student();
 		            break;
 		          case 2:
-		            Delete.professor();
-		            break;
+		        	  System.out.println("Insira o id do professor que deseja Deletar: ");
+		        	  int id = scan.nextInt();
+		        	  Delete.professor(id, Repository.professors);
+		        	  break;
 		          case 3:
 		            Delete.classroom();
 		            break;
 		          case 4:
-		            Delete.martialArt();
+		            Delete.martialArt(Repository.martialArts);
 		            break;
 		          case 5:
 		            Delete.plan();
 		            break;
 		          default:
-		            System.out.println("Escolha uma opção válida!");
+		            System.out.println("Escolha uma opcao valida!");
 		            break;
 		        }
 				break;

@@ -8,13 +8,10 @@ public class Get{
 	static Scanner scan = new Scanner(System.in);
 	static String name;
 
-  public static Student student(ArrayList<Student> students){
-	  System.out.println("Digite o nome do estudante: ");
-	  name = scan.nextLine();
-	  
+  public static Student student(ArrayList<Student> students, String name){  
 	  for(Student s : students) {
 		  if(s.getName().equals(name)) {
-			  return s;
+		  return s;
 		  }
 	  }
 	  return null;
@@ -39,9 +36,7 @@ public class Get{
 		return Repository.professors;
 	}
 
-  public static Classroom classroom(ArrayList<Classroom> classrooms) {
-	  System.out.println("Digite o id da classe: ");
-	  int id = scan.nextInt();
+  public static Classroom classroom(ArrayList<Classroom> classrooms, int id) {
 	  for(Classroom c : classrooms) {
 		  if(c.getId() == id) {
 			  return c;
@@ -54,16 +49,14 @@ public class Get{
     return Repository.classrooms;
   }
 
-  public static MartialArt MartialArt(ArrayList<MartialArt> martialArt) {
-	  System.out.println("Digite o nome da Arte Marcial: ");
-	  String modality = scan.nextLine();
-		  for(MartialArt m : martialArt) {
-				if(m.getModality().equals(modality)) {
-					return m;
-				}
-		}
-		return null;
+  public static MartialArt martialArt(ArrayList<MartialArt> martialArt, String modality) {
+	  for(MartialArt m : martialArt) {
+			if(m.getModality().equals(modality)) {
+				return m;
+			}
 	}
+	return null;
+  }
 
   public static ArrayList<MartialArt> allMartialArt(){
     return Repository.martialArts;

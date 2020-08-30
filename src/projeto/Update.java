@@ -124,7 +124,7 @@ public class Update{
 						modality = scan.nextLine();
 						martial = Get.martialArt(martials, modality);
 					} else {
-						System.out.println("Opção invalida");
+						System.out.println("Opcao invalida");
 					}
 
 				} else {
@@ -134,7 +134,7 @@ public class Update{
 					flag = true;
 				}
 			} catch (Exception erro) {
-				System.out.println("ERRO! Você digitou algo errado, tente novamente!");
+				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
 				System.out.println("#################################################");
 				break;
 			}
