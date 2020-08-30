@@ -21,16 +21,14 @@ public class Get{
 		return Repository.students;
   }
 
-  public static Professor professor(ArrayList<Professor> professors) {
-	  System.out.println("Digite o nome do professor: ");
-	  name = scan.nextLine();
-		  for(Professor p : professors) {
-				if(p.getName().equals(name)) {
-					return p;
-				}
+  public static Professor professor(ArrayList<Professor> professors, String name) {
+	  for(Professor p : professors) {
+		if(p.getName().equals(name)) {
+			return p;
 		}
-		return null;
-	}
+	  }
+	  return null;
+  }
 
   public static ArrayList<Professor> allProfessor() {
 		return Repository.professors;

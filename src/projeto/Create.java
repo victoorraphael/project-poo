@@ -134,73 +134,83 @@ public class Create{
   }
 
   public static Student student() {
-    Student student;
-    idStudent++;
-    System.out.println("Insira o Nome Completo:");
-		String name = scan.nextLine();
-		System.out.println("Insira sua Data de Nascimento:");
-		String birth = scan.nextLine();
-		System.out.println("Insira seu Telefone:");
-		String phone = scan.nextLine();
-		System.out.println("eh Whatsapp [Y/N]:");
-		boolean isWhatsapp = scan.nextBoolean();
-		System.out.println("Insira o seu Email:");
-		String email = scan.nextLine();
-		System.out.println("Insira seu CPF:");
-		String cpf = scan.nextLine();
-		System.out.println("Insira seu Sexo:");
-		String gender = scan.nextLine();
-		System.out.println("Insira seu Peso:");
-		String weight = scan.nextLine();
-		System.out.println("Insira sua Altura:");
-		String height = scan.nextLine();
-		System.out.println("Insira sua Categoria:");
-		String category = scan.nextLine();
-		System.out.println("Insira sua Graduacao:");
-		String graduation = scan.nextLine();
-		System.out.println("Insira seu CEP:");
-		String zip = scan.nextLine();
-		System.out.println("Insira o Logradouro:");
-		String street = scan.nextLine();
-		System.out.println("Insira o Numero:");
-		String number = scan.nextLine();
-		System.out.println("Insira seu Bairro:");
-		String neighbour = scan.nextLine();
-		System.out.println("Insira o Complemento:");
-		String complement = scan.nextLine();
-		System.out.println("Insira sua Cidade:");
-		String city = scan.nextLine();
-		System.out.println("Codigo de verificacao:");
-		int code = scan.nextInt();
-		scan.nextLine();
-		System.out.println("Insira o Grau do Aluno: ");
-		String grade = scan.nextLine();
-		student = new Student(
-								name,
-								birth,
-								graduation,
-								cpf,
-								street,
-								neighbour,
-								city,
-								zip,
-								number,
-								complement,
-								email,
-								phone,
-								isWhatsapp,
-								gender,
-								category,
-								weight,
-								height,
-								code,
-								grade,
-								idStudent
-								);
-   if(student != null){
+	Student student;
+	idStudent++;
+	System.out.println("Insira o Nome Completo:");
+	String name = scan.nextLine();
+	System.out.println("Insira sua Data de Nascimento:");
+	String birth = scan.nextLine();
+	System.out.println("Insira seu Telefone:");
+	String phone = scan.nextLine();
+	System.out.println("eh Whatsapp [Y/N]:");
+	String isWhatsapp = scan.nextLine();
+	System.out.println("Insira o seu Email:");
+	String email = scan.nextLine();
+	System.out.println("Insira seu CPF:");
+	String cpf = scan.nextLine();
+	System.out.println("Insira seu Sexo:");
+	String gender = scan.nextLine();
+	System.out.println("Insira seu Peso:");
+	String weight = scan.nextLine();
+	System.out.println("Insira sua Altura:");
+	String height = scan.nextLine();
+	System.out.println("Insira sua Categoria:");
+	String category = scan.nextLine();
+	System.out.println("Insira sua Graduacao:");
+	String graduation = scan.nextLine();
+	System.out.println("Insira seu CEP:");
+	String zip = scan.nextLine();
+	System.out.println("Insira o Logradouro:");
+	String street = scan.nextLine();
+	System.out.println("Insira o Numero:");
+	String number = scan.nextLine();
+	System.out.println("Insira seu Bairro:");
+	String neighbour = scan.nextLine();
+	System.out.println("Insira o Complemento:");
+	String complement = scan.nextLine();
+	System.out.println("Insira sua Cidade:");
+	String city = scan.nextLine();
+	System.out.println("Codigo de verificacao:");
+	int code = scan.nextInt();
+	scan.nextLine();
+	System.out.println("Insira o Grau do Aluno: ");
+	String grade = scan.nextLine();
+	boolean isWpp = false;
+	if(isWhatsapp.equals("y") || isWhatsapp.equals("Y")) {
+		isWhatsapp = "true";
+		isWpp = Boolean.parseBoolean(isWhatsapp);
+	} else if (isWhatsapp.contains("nN")) {
+		isWhatsapp = "false";
+		isWpp = Boolean.parseBoolean(isWhatsapp);
+	}
+	student = new Student(
+							name,
+							birth,
+							graduation,
+							cpf,
+							street,
+							neighbour,
+							city,
+							zip,
+							number,
+							complement,
+							email,
+							phone,
+							isWpp,
+							gender,
+							category,
+							weight,
+							height,
+							code,
+							grade,
+							idStudent
+							);
+	if(student != null){
       saveStudent(student, Repository.students);
     }
+	
     return student;
+    
 	}
 
   public static void saveStudent(Student student, ArrayList<Student> students){

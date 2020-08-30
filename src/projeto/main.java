@@ -33,8 +33,9 @@ public class main {
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
 		        int secondaryKey = scan.nextInt();
-	        scan.nextLine();
-		        
+		        scan.nextLine();
+	        
+		        // Submenu
 		        switch(secondaryKey){
 		          case 1:
 		            Create.student();
@@ -43,15 +44,15 @@ public class main {
 		            Create.professor();
 		            break;
 		          case 3:
-	            if(Repository.professors == null){
-	              System.out.println("Nenhum professor inserido no sistema ainda.");
-	              break;
-	            }
-	            if(Repository.martialArts == null){
-	              System.out.println("Nenhuma arte marcial inserida no sistema ainda.");
-	              break;
-	            }
-	            Create.classroom(Repository.professors, Repository.martialArts);
+		            if(Repository.professors == null){
+		              System.out.println("Nenhum professor inserido no sistema ainda.");
+		              break;
+		            }
+		            if(Repository.martialArts == null){
+		              System.out.println("Nenhuma arte marcial inserida no sistema ainda.");
+		              break;
+		            }
+		            Create.classroom(Repository.professors, Repository.martialArts);
 		            break;
 		          case 4:
 		            Create.martialArt();
@@ -111,8 +112,10 @@ public class main {
 		            Get.student(Repository.students, name);
 		            break;
 		          case 2:
-		            Get.professor(Repository.professors);
-		            break;
+		        	  System.out.println("Digite o nome do aluno:");
+		        	  String prof = scan.nextLine();
+		        	  Get.professor(Repository.professors, prof);
+		        	  break;
 		          case 3:
 		        	  System.out.println("Digite o id da turma: ");
 		        	  int id = scan.nextInt();
