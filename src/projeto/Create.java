@@ -5,66 +5,26 @@ import java.util.Scanner;
 
 public class Create{
 
-  static Scanner scan = new Scanner(System.in);
-	
+	static Scanner scan = new Scanner(System.in);
 
-  
-  static int professorId = 0;
-  public static int idStudent = 0;
-  public static int id_classroom;
-  
-  public static boolean validateWpp(String isWhatsapp) {
-	  if(isWhatsapp.equals("y") || isWhatsapp.equals("Y")) {
-		  return true;
-	  } else if (isWhatsapp.contains("nN")) {
-		  return false; 
-	  }
-	  return false;
+
+
+	static int professorId = 0;
+	public static int idStudent = 0;
+	public static int id_classroom = 0;
+
+	public static boolean validateWpp(String isWhatsapp) {
+		if(isWhatsapp.equals("y") || isWhatsapp.equals("Y")) {
+			return true;
+		} else if (isWhatsapp.contains("nN")) {
+			return false; 
+		}
+	return false;
   }
 
-  public static void formPerson() {
-		scan.nextLine();
+	public static Professor professor() {
+		Professor professor;
 		System.out.println("Insira o Nome Completo:");
-		String name = scan.nextLine();
-		System.out.println("Insira sua Data de Nascimento:");
-		String birth = scan.nextLine();
-		System.out.println("Insira seu Telefone:");
-		String phone = scan.nextLine();
-		System.out.println("eh Whatsapp [Y/N]:");
-		boolean isWhatsapp = scan.nextBoolean();
-		System.out.println("Insira o seu Email:");
-		String email = scan.nextLine();
-		System.out.println("Insira seu CPF:");
-		String cpf = scan.nextLine();
-		System.out.println("Insira seu Sexo:");
-		String gender = scan.nextLine();
-		System.out.println("Insira seu Peso:");
-		String weight = scan.nextLine();
-		System.out.println("Insira sua Altura:");
-		String height = scan.nextLine();
-		System.out.println("Insira sua Categoria:");
-		String category = scan.nextLine();
-		System.out.println("Insira sua Graduacao:");
-		String graduation = scan.nextLine();
-		System.out.println("Insira seu CEP:");
-		String zip = scan.nextLine();
-		System.out.println("Insira o Logradouro:");
-		String street = scan.nextLine();
-		System.out.println("Insira o Numero:");
-		String number = scan.nextLine();
-		System.out.println("Insira seu Bairro:");
-		String neighbour = scan.nextLine();
-		System.out.println("Insira o Complemento:");
-		String complement = scan.nextLine();
-		System.out.println("Insira sua Cidade:");
-		String city = scan.nextLine();
-		System.out.println("Codigo de verificacao:");
-		int code = scan.nextInt();
-	}
-
-  public static Professor professor() {
-    Professor professor;
-    System.out.println("Insira o Nome Completo:");
 		String name = scan.nextLine();
 		System.out.println("Insira sua Data de Nascimento:");
 		String birth = scan.nextLine();
@@ -133,61 +93,61 @@ public class Create{
 								federation,
 								professorId
 								);
-    if(professor != null){
-      saveProfessor(professor, Repository.professors);
-    }
-    return professor;
+		if(professor != null){
+		saveProfessor(professor, Repository.professors);
+		}
+    	return professor;
 	}
 
-  public static void saveProfessor(Professor professor, ArrayList<Professor> professors){
-    professors.add(professor);
-  }
+	public static void saveProfessor(Professor professor, ArrayList<Professor> professors){
+	professors.add(professor);
+	}
 
-  public static Student student() {
-	Student student;
-	idStudent++;
-	System.out.println("Insira o Nome Completo:");
-	String name = scan.nextLine();
-	System.out.println("Insira sua Data de Nascimento:");
-	String birth = scan.nextLine();
-	System.out.println("Insira seu Telefone:");
-	String phone = scan.nextLine();
-	System.out.println("eh Whatsapp [Y/N]:");
-	String isWhatsapp = scan.nextLine();
-	System.out.println("Insira o seu Email:");
-	String email = scan.nextLine();
-	System.out.println("Insira seu CPF:");
-	String cpf = scan.nextLine();
-	System.out.println("Insira seu Sexo:");
-	String gender = scan.nextLine();
-	System.out.println("Insira seu Peso:");
-	String weight = scan.nextLine();
-	System.out.println("Insira sua Altura:");
-	String height = scan.nextLine();
-	System.out.println("Insira sua Categoria:");
-	String category = scan.nextLine();
-	System.out.println("Insira sua Graduacao:");
-	String graduation = scan.nextLine();
-	System.out.println("Insira seu CEP:");
-	String zip = scan.nextLine();
-	System.out.println("Insira o Logradouro:");
-	String street = scan.nextLine();
-	System.out.println("Insira o Numero:");
-	String number = scan.nextLine();
-	System.out.println("Insira seu Bairro:");
-	String neighbour = scan.nextLine();
-	System.out.println("Insira o Complemento:");
-	String complement = scan.nextLine();
-	System.out.println("Insira sua Cidade:");
-	String city = scan.nextLine();
-	System.out.println("Codigo de verificacao:");
-	int code = scan.nextInt();
-	scan.nextLine();
-	System.out.println("Insira o Grau do Aluno: ");
-	String grade = scan.nextLine();
-	boolean checkWpp = validateWpp(isWhatsapp);
-	
-	student = new Student(
+	public static Student student() {
+		Student student;
+		idStudent++;
+		System.out.println("Insira o Nome Completo:");
+		String name = scan.nextLine();
+		System.out.println("Insira sua Data de Nascimento:");
+		String birth = scan.nextLine();
+		System.out.println("Insira seu Telefone:");
+		String phone = scan.nextLine();
+		System.out.println("eh Whatsapp [Y/N]:");
+		String isWhatsapp = scan.nextLine();
+		System.out.println("Insira o seu Email:");
+		String email = scan.nextLine();
+		System.out.println("Insira seu CPF:");
+		String cpf = scan.nextLine();
+		System.out.println("Insira seu Sexo:");
+		String gender = scan.nextLine();
+		System.out.println("Insira seu Peso:");
+		String weight = scan.nextLine();
+		System.out.println("Insira sua Altura:");
+		String height = scan.nextLine();
+		System.out.println("Insira sua Categoria:");
+		String category = scan.nextLine();
+		System.out.println("Insira sua Graduacao:");
+		String graduation = scan.nextLine();
+		System.out.println("Insira seu CEP:");
+		String zip = scan.nextLine();
+		System.out.println("Insira o Logradouro:");
+		String street = scan.nextLine();
+		System.out.println("Insira o Numero:");
+		String number = scan.nextLine();
+		System.out.println("Insira seu Bairro:");
+		String neighbour = scan.nextLine();
+		System.out.println("Insira o Complemento:");
+		String complement = scan.nextLine();
+		System.out.println("Insira sua Cidade:");
+		String city = scan.nextLine();
+		System.out.println("Codigo de verificacao:");
+		int code = scan.nextInt();
+		scan.nextLine();
+		System.out.println("Insira o Grau do Aluno: ");
+		String grade = scan.nextLine();
+		boolean checkWpp = validateWpp(isWhatsapp);
+		
+		student = new Student(
 							name,
 							birth,
 							graduation,
@@ -209,27 +169,27 @@ public class Create{
 							grade,
 							idStudent
 							);
-	if(student != null){
-      saveStudent(student, Repository.students);
-    }
-	
-    return student;
+		if(student != null){
+		saveStudent(student, Repository.students);
+		}
+		
+    	return student;
     
 	}
 
-  public static void saveStudent(Student student, ArrayList<Student> students){
-    students.add(student);
-  }
+	public static void saveStudent(Student student, ArrayList<Student> students){
+		students.add(student);
+	}
 
-  public static MartialArt martialArt() {
-		  MartialArt martialArt;
-      System.out.println("Insira o modalidade que deseja: ");
-			String modality = scan.nextLine();
-			martialArt = new MartialArt(modality); 
-  if(martialArt != null){
-      saveMartialArt(martialArt, Repository.martialArts);
-    }
-    return martialArt;
+	public static MartialArt martialArt() {
+		MartialArt martialArt;
+		System.out.println("Insira o modalidade que deseja: ");
+		String modality = scan.nextLine();
+		martialArt = new MartialArt(modality); 
+		if(martialArt != null){
+		saveMartialArt(martialArt, Repository.martialArts);
+		}
+    	return martialArt;
 	}
 
   public static void saveMartialArt(MartialArt martialArt, ArrayList<MartialArt> martialArts){
@@ -321,13 +281,15 @@ public class Create{
 
 	  
   //Revisar plano 
-  public static void plan() {
-    System.out.println("Digite o preço do plano: ");
-    double price = scan.nextDouble();
-    System.out.println("Digite o periodo do plano: ");
-    String period = scan.nextLine();
-    System.out.println("Tem cupom de desconto [Y/N]: ");
-    Boolean promocode = scan.nextBoolean();
+	public static Plans plan() {
+		System.out.println("Digite o nome do plano: ");
+		String name = scan.nextLine();
+		System.out.println("Digite o preço do plano: ");
+		double price = scan.nextDouble();
+		System.out.println("Digite o periodo do plano: ");
+		String period = scan.nextLine();
+		
+		Plans p = new Plans(name, price, period, id)
   }
 
 }

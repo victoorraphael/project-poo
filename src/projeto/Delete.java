@@ -23,9 +23,29 @@ public class Delete{
       }
     }
 
-  public static void classroom(){
-
-  }
+  public static void classroom(ArrayList<Classroom> classrooms){
+		if(classrooms != null) {
+			Classroom classroom;
+			System.out.println("Digite o id que deseja deletar:");
+			int id = scan.nextInt();
+			try {
+			scan.nextLine();
+				for(Classroom c : classrooms) {
+					if(c.getId() == id) {
+						classrooms.remove(c);
+						System.out.println("Classe excluida com sucesso");
+						break;
+					}
+				}
+			}catch (Exception erro) {
+				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+				System.out.println("#################################################");
+			}
+		}else {
+			System.out.println("Não há nenhuma turma cadastrada.");
+		}
+		
+	}
   
   //Deleta o elemento de MartialArt - OK!
   public static void martialArt(ArrayList<MartialArt> martials) {

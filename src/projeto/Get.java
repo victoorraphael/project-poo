@@ -32,16 +32,17 @@ public class Get{
 
   public static Professor professor(ArrayList<Professor> professors, String name) {
 	  for(Professor p : professors) {
-		if(p.getName().equals(name)) {
-			System.out.println("===== DADOS DO ALUNO =====");
-			System.out.println("Nome: " + p.getName());
-			System.out.println("Data de nascimento: " + p.getBirth());
-			System.out.println("Email: " + p.getEmail());
-			System.out.println("Altura: " + p.getHeight());
-			System.out.println("Peso: " + p.getWeight());
-			System.out.println("Categoria: " + p.getCategory());
-			return p;
-		}
+      if(p.getName().equals(name)) {
+        System.out.println("===== DADOS DO ALUNO =====");
+        System.out.println("Nome: " + p.getName());
+        System.out.println("Data de nascimento: " + p.getBirth());
+        System.out.println("Email: " + p.getEmail());
+        System.out.println("Altura: " + p.getHeight());
+        System.out.println("Peso: " + p.getWeight());
+        System.out.println("Categoria: " + p.getCategory());
+        
+        return p;
+      }
 	  }
 	  return null;
   }

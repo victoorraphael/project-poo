@@ -18,7 +18,7 @@ public class main {
     boolean loop = true;
     
     do {
-    	System.out.println("========== MENU ==========");
+    System.out.println("========== MENU ==========");
 		System.out.println("1. Cadastrar");
 		System.out.println("2. Atualizar Cadastro");
 		System.out.println("3. Buscar Cadastro");
