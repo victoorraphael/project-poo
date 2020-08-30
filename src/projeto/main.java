@@ -14,17 +14,25 @@ public class main {
     Classroom classroom;
     MartialArt martialArt;
     Plans plan;
-		
-		System.out.println("========== MENU ==========");
+    
+    boolean loop = true;
+    
+    do {
+    	System.out.println("========== MENU ==========");
 		System.out.println("1. Cadastrar");
 		System.out.println("2. Atualizar Cadastro");
 		System.out.println("3. Buscar Cadastro");
 		System.out.println("4. Deletar Cadastro");
-		
+		System.out.println("0. Sair");
 		int key = scan.nextInt();
+		
 		scan.nextLine();
 		
 		switch(key) {
+			case 0:
+	        	System.out.println("Obrigado por usar nosso sistema!");
+	        	loop = false;
+	        	break;
 			case 1:
 		        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
 		        System.out.println("1. Aluno");
@@ -32,6 +40,7 @@ public class main {
 		        System.out.println("3. Turma");
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
+		        
 		        int secondaryKey = scan.nextInt();
 		        scan.nextLine();
 	        
@@ -61,7 +70,7 @@ public class main {
 		            Create.plan();
 		            break;
 		          default:
-		            System.out.println("Escolha uma opção válida!");
+		            System.out.println("Escolha uma opcao valida!");
 		            break;
 		        }
 				break;
@@ -106,6 +115,7 @@ public class main {
 		        secondaryKey = scan.nextInt();
 		        
 		        switch(secondaryKey){
+		        	
 		          case 1:
 		            System.out.println("Digite o nome do aluno:");
 		            String name = scan.nextLine();
@@ -135,7 +145,7 @@ public class main {
 		        }
 				break;
 			case 4:
-		        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+		        System.out.println("========== ESCOLHA UMA OPCAO ==========");
 		        System.out.println("1. Aluno");
 		        System.out.println("2. Professor");
 		        System.out.println("3. Turma");
@@ -167,8 +177,11 @@ public class main {
 		        }
 				break;
 			default:
+				System.out.println("Digite uma opcao valida!");
 				break;
 		}
+	} while (loop);
+		
 	}
 
 }
