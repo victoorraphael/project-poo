@@ -12,8 +12,8 @@ public class main {
     Student student;
     Professor professor;
     Classroom classroom;
-    MartialArts martialArt;
-    Plan plan;
+    MartialArt martialArt;
+    Plans plan;
 		
 		System.out.println("========== MENU ==========");
 		System.out.println("1. Cadastrar");
@@ -22,7 +22,7 @@ public class main {
 		System.out.println("4. Deletar Cadastro");
 		
 		int key = scan.nextInt();
-    scan.nextLine();
+		scan.nextLine();
 		
 		switch(key) {
 			case 1:
@@ -33,7 +33,7 @@ public class main {
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
 		        int secondaryKey = scan.nextInt();
-            scan.nextLine();
+	        scan.nextLine();
 		        
 		        switch(secondaryKey){
 		          case 1:
@@ -43,15 +43,15 @@ public class main {
 		            Create.professor();
 		            break;
 		          case 3:
-                if(Repository.professors == null){
-                  System.out.println("Nenhum professor inserido no sistema ainda.");
-                  break;
-                }
-                if(Repository.martialArts == null){
-                  System.out.println("Nenhuma arte marcial inserida no sistema ainda.");
-                  break;
-                }
-                Create.classroom(Repository.professors, Repository.martialArts);
+	            if(Repository.professors == null){
+	              System.out.println("Nenhum professor inserido no sistema ainda.");
+	              break;
+	            }
+	            if(Repository.martialArts == null){
+	              System.out.println("Nenhuma arte marcial inserida no sistema ainda.");
+	              break;
+	            }
+	            Create.classroom(Repository.professors, Repository.martialArts);
 		            break;
 		          case 4:
 		            Create.martialArt();
@@ -72,14 +72,14 @@ public class main {
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
 		        secondaryKey = scan.nextInt();
-            scan.nextLine();
+		        scan.nextLine();
 		        
 		        switch(secondaryKey){
-		          case 1:
-                Update.student(Repository.students);
+		          case 1:		        	  
+		        	  Update.student(Repository.students);
 		            break;
 		          case 2:
-		            Update.professor(Repository.professor);
+		            Update.professor(Repository.professors);
 		            break;
 		          case 3:
 		            Update.classroom(Repository.classrooms);
@@ -107,20 +107,20 @@ public class main {
 		        switch(secondaryKey){
 		          case 1:
 		            System.out.println("Digite o nome do aluno:")
-                
-                Get.student();
+	            
+		            Get.student(Repository.students);
 		            break;
 		          case 2:
-		            Get.professor();
+		            Get.professor(Repository.professors);
 		            break;
 		          case 3:
-		            Get.classroom();
+		            Get.classroom(Repository.classrooms);
 		            break;
 		          case 4:
-		            Get.martialArt();
+		            Get.martialArt(Repository.martialArts);
 		            break;
 		          case 5:
-		            Get.plan();
+		            Get.plan(Repository.plans);
 		            break;
 		          default:
 		            System.out.println("Escolha uma opção válida!");

@@ -7,16 +7,19 @@ public class Update{
 
   static Scanner scan = new Scanner(System.in);
 
-  public static void student(String name, ArrayList<Student> students){
-    students.forEach( stud -> {
-      if(stud.getName().equals(name)){
-        stud.setName(name);
-      }
-    });
+  public static void student(ArrayList<Student> students){
+	System.out.println("Digite o nome do Estudante que deseja alterar: ");
+  	String name = scan.nextLine();
+	students.forEach( stud -> {
+	  if(stud.getName().equals(name)){
+	    stud.setName(name);
+	  }
+	});
   }
 
-
-  
+  public static void professor(ArrayList<Professor> professors) {
+	  
+  }
 
   public static void classroom(ArrayList<Classroom> classrooms){
     Classroom classroom;
@@ -139,7 +142,7 @@ public class Update{
 		} while (!flag);
 	}
 
-  public static void plan(){
+  public static void plan(ArrayList<Plans> plan){
 
   }
 }

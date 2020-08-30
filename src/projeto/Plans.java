@@ -1,11 +1,11 @@
 package projeto;
 
-  public class Plans {
+public class Plans {
 	
-    private String name;
-    private double price;
-    private String period;
-    private int id;
+	private String name;
+	private double price;
+	private String period;
+	private int id;
 
     public Plans(String name, double price, String period, Boolean promocode, int id) {
       this.name = name;
@@ -44,5 +44,4 @@ package projeto;
     public void setId(int id) {
       this.id = id;
     }
-  }
 }
