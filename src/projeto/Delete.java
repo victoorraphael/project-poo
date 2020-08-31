@@ -15,18 +15,29 @@ public class Delete{
 	  }
   }
 
-  public static void professor(
-    int id,
-    ArrayList<Professor> professors
-    ){
-      int arraySize = professors.size();
-      for (int i = 0; i < arraySize; i ++) {
-        if(professors.get(i).getId() == id){
-          professors.remove(i);
-        }
-      }
+  public static void professor(ArrayList<Professor> professors){
+		if(professors != null){
+			System.out.println("Insira o id do professor que deseja Deletar: ");
+			id = scan.nextInt();
+			int arraySize = professors.size();
+			try{
+				for (int i = 0; i < arraySize; i ++) {
+					if(professors.get(i).getId() == id){
+						professors.remove(i);
+						System.out.println("Professor excluido com sucesso!");
+						break;
+					}
+				}
+			}catch (Exception erro){
+				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+				System.out.println("#################################################");
+			}
+		} else {
+			System.out.println("Não há nenhuma turma cadastrada.");
+	  }
     }
 
+  
   public static void classroom(ArrayList<Classroom> classrooms){
 		if(classrooms != null) {
 			Classroom classroom;
@@ -51,6 +62,7 @@ public class Delete{
 		
 	}
   
+
   //Deleta o elemento de MartialArt - OK!
   public static void martialArt(ArrayList<MartialArt> martials) {
 		Boolean flag = false;

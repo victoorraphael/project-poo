@@ -196,6 +196,27 @@ public class Create{
     martialArts.add(martialArt);
   }
 
+  public static Plans plan(ArrayList<Plans> plans) {
+
+		System.out.println("Digite o nome do Plano:");
+		String name = scan.nextLine();
+		System.out.println("Digite o valor do planos, R$: ");
+		double price = scan.nextDouble();
+		System.out.println("Digite o período: ");
+		scan.nextLine();
+		String period = scan.nextLine();
+		System.out.println("Digite o Id do Plano");
+		int id = scan.nextInt();
+		plans.add(new Plans(name, price, period, id));
+		if (plan != null) {
+			savePlan(plan, Repository.plans);			
+	}
+		return plan;
+  }
+
+  public savePlan(Plans plan, ArrayList<Plans> plans){
+    plan.add(plans);
+  }
 
   public static Classroom classroom(ArrayList<Professor> professors, ArrayList<MartialArt> martialArts){
 		
@@ -241,7 +262,7 @@ public class Create{
 			flag = true;
 		}
 	    while(!(flag)){
-		      System.out.println("Esse modalidade nÃ£o existe, deseja tentar novamente. [Y/N]");
+		      System.out.println("Esse modalidade nÃo existe, deseja tentar novamente. [Y/N]");
 		      op = scan.nextLine();
 		      if((op.equals("y")) || (op.equals("Y"))) {
 		    	  System.out.println("Digite o nome da modalidade novamente: ");
@@ -278,18 +299,5 @@ public class Create{
 	public static void saveClassrrom(Classroom classroom, ArrayList<Classroom> classrooms) {
 		classrooms.add(classroom);
 	}
-
-	  
-	public static Plans plan() {
-		System.out.println("Digite o nome do plano: ");
-		String name = scan.nextLine();
-		System.out.println("Digite o preÃ§o do plano: ");
-		double price = scan.nextDouble();
-		System.out.println("Digite o periodo do plano: ");
-		String period = scan.nextLine();
-		int id = 0;
-		Plans p = new Plans(name, price, period, false, id);
-		return p;
-  }
 
 }

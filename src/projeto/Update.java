@@ -25,14 +25,14 @@ public class Update{
     Classroom classroom;
     String op;
     System.out.println("Digite o Id da turma:");
-	int id_turma = scan.nextInt();
-	boolean flag;
-	classroom = Get.classroom(classrooms, id_turma);
-	if(classroom == null) {
+	  int id_turma = scan.nextInt();
+  	boolean flag;
+  	classroom = Get.classroom(classrooms, id_turma);
+  	if(classroom == null) {
 		flag = false;
-	}else {
+  	}else {
 		flag = true;
-	}
+  	}
 	 
     while(!(flag)){
       System.out.println("Esse turma não existe, deseja tentar novamente. [Y/N]");
@@ -143,6 +143,53 @@ public class Update{
 	}
 
   public static void plan(ArrayList<Plans> plan){
+    Boolean flag = false;
+		Plans plan;
+		do {
+			System.out.println("Insira o PLANO que deseja alterar: ");
+			planName = scan.nextLine();
+			plan = Get.plan(plans, planName);
+
+			try {
+				if (plan == null) {
+					System.out.println("ERRO! Item não cadastrado");
+					System.out.println("1 - Tentar novamente");
+					System.out.println("0 - Sair");
+					int option = scan.nextInt();
+					scan.nextLine();
+					if (option == 0) {
+						flag = true;
+					} else if (option == 1) {
+						planName = scan.nextLine();
+						plan = Get.plan(plans, planName);
+					} else {
+						System.out.println("Opção invalida");
+					}
+
+				} else {
+					System.out.println("Insira o nome do novo Plano: ");
+					planName = scan.nextLine();
+					plan.setName(planName);
+					System.out.println("Insira o novo valor: ");
+					double price = scan.nextDouble();
+					plan.setPrice(price);
+					System.out.println("Insira o novo período: ");
+					String period = scan.nextLine();
+					scan.nextLine();
+					plan.setPeriod(period);
+					System.out.println("Insira o novo id: ");
+					int id = scan.nextInt();
+					plan.setId(id);
+					flag = true;
+				}
+			} catch (Exception erro) {
+				System.out.println("ERRO! Você digitou algo errado, tente novamente!");
+				System.out.println("#################################################");
+				break;
+			}
+
+		} while (!flag);
+	}
 
   }
 }

@@ -158,15 +158,13 @@ public class main {
 		        
 		        switch(secondaryKey){
 		          case 1:
-		        	  System.out.println("Digite o id do Aluno: ");
-		        	  int id = scan.nextInt();
+					System.out.println("Digite o id do Aluno: ");
+					int id = scan.nextInt();
 		            Delete.student(id, Repository.students);
 		            break;
 		          case 2:
-		        	  System.out.println("Insira o id do professor que deseja Deletar: ");
-		        	  id = scan.nextInt();
-		        	  Delete.professor(id, Repository.professors);
-		        	  break;
+		        	Delete.professor(Repository.professors);
+					break;
 		          case 3:
 		            Delete.classroom(Repository.classrooms);
 		            break;
