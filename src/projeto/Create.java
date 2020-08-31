@@ -280,7 +280,6 @@ public class Create{
 	}
 
 	  
-  //Revisar plano 
 	public static Plans plan() {
 		System.out.println("Digite o nome do plano: ");
 		String name = scan.nextLine();

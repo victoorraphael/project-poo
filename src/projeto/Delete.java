@@ -7,8 +7,12 @@ public class Delete{
 	
 	static Scanner scan = new Scanner(System.in);
 
-  public static void student(){
-
+  public static void student(int code, ArrayList<Student> students){
+	  for(Student s : students){
+		  if(s.getCode().equals(code)){
+			  students.remove(s);
+		  }
+	  }
   }
 
   public static void professor(
@@ -95,7 +99,7 @@ public class Delete{
 		} while (!flag);
 	}
 
-  public static void plan(){
-    
-  }
+	public static void plan(){
+		
+	}
 }
