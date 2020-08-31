@@ -9,8 +9,10 @@ public class Delete{
 
   public static void student(int code, ArrayList<Student> students){
 	  for(Student s : students){
-		  if(s.getCode().equals(code)){
+		  if(s.getCode() == code){
+			  System.out.println(students);
 			  students.remove(s);
+			  System.out.println(students);
 		  }
 	  }
   }
