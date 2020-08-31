@@ -138,7 +138,9 @@ public class main {
 		            Get.martialArt(Repository.martialArts, modality);
 		            break;
 		          case 5:
-		            Get.plan(Repository.plans);
+		        	  System.out.println("Insira o nome do plano: ");
+		        	  String planName = scan.nextLine();
+		            Get.plan(Repository.plans, planName);
 		            break;
 		          default:
 		            System.out.println("Escolha uma opção válida!");

@@ -77,11 +77,9 @@ public class Get{
     return Repository.martialArts;
   }
 
-  public static Plans plan(ArrayList<Plans> plans){
-	  System.out.println("Digite o nome do plano: ");
-	  name = scan.nextLine();
+  public static Plans plan(ArrayList<Plans> plans, String plan){
 	  for(Plans p : plans) {
-		  if(p.getName().equals(name)) {
+		  if(p.getName().equals(plan)) {
 			  return p;
 		  }
 	  }

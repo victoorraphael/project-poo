@@ -9,10 +9,8 @@ public class Delete{
 
   public static void student(int code, ArrayList<Student> students){
 	  for(Student s : students){
-		  if(s.getCode() == code){
-			  System.out.println(students);
-			  students.remove(s);
-			  System.out.println(students);
+		  if(s.getCode() == code){			  
+			  students.remove(s);			  
 		  }
 	  }
   }
@@ -86,7 +84,7 @@ public class Delete{
 					if (option.contains("Y") || option.contains("y")) {
 						modality = scan.nextLine();
 						martials.remove(modality);
-            System.out.println("Plano excluído com sucesso!")
+						System.out.println("Plano excluído com sucesso!");
 						flag = true;
 					} else if (!option.contains("Y") || !option.contains("y")) {
 						System.out.println("Cancelado!");
@@ -131,7 +129,7 @@ public class Delete{
 					String option = scan.nextLine();
 					if (option.contains("Y") || option.contains("y")) {
 						plans.remove(plan);
-            System.out.println("Plano excluído com sucesso!")
+						System.out.println("Plano excluído com sucesso!");
 						flag = true;
 					} else if (!option.contains("Y") || !option.contains("y")) {
 						System.out.println("Cancelado!");
