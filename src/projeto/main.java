@@ -34,7 +34,7 @@ public class main {
 	        	loop = false;
 	        	break;
 			case 1:
-		        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+		        System.out.println("========== ESCOLHA UMA OPCAO ==========");
 		        System.out.println("1. Aluno");
 		        System.out.println("2. Professor");
 		        System.out.println("3. Turma");
@@ -101,12 +101,12 @@ public class main {
 		            Update.plan(Repository.plans);
 		            break;
 		          default:
-		            System.out.println("Escolha uma opção válida!");
+		            System.out.println("Escolha uma opcao valida!");
 		            break;
 		        }
 				break;
 			case 3:
-		        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+		        System.out.println("========== ESCOLHA UMA OPCAO ==========");
 		        System.out.println("1. Aluno");
 		        System.out.println("2. Professor");
 		        System.out.println("3. Turma");
@@ -143,7 +143,7 @@ public class main {
 		            Get.plan(Repository.plans, planName);
 		            break;
 		          default:
-		            System.out.println("Escolha uma opção válida!");
+		            System.out.println("Escolha uma opcao valida!");
 		            break;
 		        }
 				break;
