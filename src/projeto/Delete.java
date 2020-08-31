@@ -7,9 +7,9 @@ public class Delete{
 	
 	static Scanner scan = new Scanner(System.in);
 
-  public static void student(int code, ArrayList<Student> students){
+  public static void student(String name, ArrayList<Student> students){
 	  for(Student s : students){
-		  if(s.getCode() == code){			  
+		  if(s.getName().equals(name)){			  
 			  students.remove(s);			  
 		  }
 	  }
@@ -33,7 +33,7 @@ public class Delete{
 				System.out.println("#################################################");
 			}
 		} else {
-			System.out.println("Não há nenhuma turma cadastrada.");
+			System.out.println("Nao ha nenhuma turma cadastrada.");
 	  }
     }
 
@@ -57,7 +57,7 @@ public class Delete{
 				System.out.println("#################################################");
 			}
 		}else {
-			System.out.println("Não há nenhuma turma cadastrada.");
+			System.out.println("Nao ha nenhuma turma cadastrada.");
 		}
 		
 	}
@@ -90,7 +90,7 @@ public class Delete{
 					}
 
 				} else {
-					System.out.println("Você irá DELETAR a modalidade: " + martial.getModality());
+					System.out.println("Voce ira DELETAR a modalidade: " + martial.getModality());
 					System.out.println("Deseja Continuar [Y/N]?");
 					String option = "Y";
 					if (option.contains("Y") || option.contains("y")) {

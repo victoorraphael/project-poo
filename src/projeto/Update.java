@@ -142,16 +142,16 @@ public class Update{
 		} while (!flag);
 	}
 
-  public static void plan(ArrayList<Plans> plan){
+  public static void plan(ArrayList<Plans> plans){
     Boolean flag = false;
-		Plans plan;
+		Plans plan1;
 		do {
 			System.out.println("Insira o PLANO que deseja alterar: ");
-			planName = scan.nextLine();
-			plan = Get.plan(plans, planName);
+			String planName = scan.nextLine();
+			plan1 = Get.plan(plans, planName);
 
 			try {
-				if (plan == null) {
+				if (plan1 == null) {
 					System.out.println("ERRO! Item não cadastrado");
 					System.out.println("1 - Tentar novamente");
 					System.out.println("0 - Sair");
@@ -161,7 +161,7 @@ public class Update{
 						flag = true;
 					} else if (option == 1) {
 						planName = scan.nextLine();
-						plan = Get.plan(plans, planName);
+						plan1 = Get.plan(plans, planName);
 					} else {
 						System.out.println("Opção invalida");
 					}
@@ -169,17 +169,17 @@ public class Update{
 				} else {
 					System.out.println("Insira o nome do novo Plano: ");
 					planName = scan.nextLine();
-					plan.setName(planName);
+					plan1.setName(planName);
 					System.out.println("Insira o novo valor: ");
 					double price = scan.nextDouble();
-					plan.setPrice(price);
+					plan1.setPrice(price);
 					System.out.println("Insira o novo período: ");
 					String period = scan.nextLine();
 					scan.nextLine();
-					plan.setPeriod(period);
+					plan1.setPeriod(period);
 					System.out.println("Insira o novo id: ");
 					int id = scan.nextInt();
-					plan.setId(id);
+					plan1.setId(id);
 					flag = true;
 				}
 			} catch (Exception erro) {
@@ -192,4 +192,3 @@ public class Update{
 	}
 
   }
-}

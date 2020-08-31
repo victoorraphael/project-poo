@@ -75,7 +75,7 @@ public class main {
 		        }
 				break;
 			case 2:
-		        System.out.println("========== ESCOLHA UMA OPÇÃO ==========");
+		        System.out.println("========== ESCOLHA UMA OPCAO ==========");
 		        System.out.println("1. Aluno");
 		        System.out.println("2. Professor");
 		        System.out.println("3. Turma");
@@ -158,9 +158,9 @@ public class main {
 		        
 		        switch(secondaryKey){
 		          case 1:
-					System.out.println("Digite o id do Aluno: ");
-					int id = scan.nextInt();
-		            Delete.student(id, Repository.students);
+					System.out.println("Digite o nome do Aluno: ");
+					String nome = scan.nextLine();
+		            Delete.student(nome, Repository.students);
 		            break;
 		          case 2:
 		        	Delete.professor(Repository.professors);
@@ -172,7 +172,7 @@ public class main {
 		            Delete.martialArt(Repository.martialArts);
 		            break;
 		          case 5:
-		            Delete.plan();
+		            Delete.plan(Repository.plans);
 		            break;
 		          default:
 		            System.out.println("Escolha uma opcao valida!");

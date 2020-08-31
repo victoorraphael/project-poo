@@ -197,24 +197,24 @@ public class Create{
   }
 
   public static Plans plan(ArrayList<Plans> plans) {
-
+	  Plans plan = null;
     try{
 		System.out.println("Digite o nome do Plano:");
-		String name = scan.nextLine();
+		String name = scan.next();
 		System.out.println("Digite o valor do planos, R$: ");
 		double price = scan.nextDouble();
-		System.out.println("Digite o período: ");
-		scan.nextLine();
+		System.out.println("Digite o perodo: ");
+		scan.next();
 		String period = scan.nextLine();
 		System.out.println("Digite o Id do Plano");
 		int id = scan.nextInt();
-		Plans plan = new Plans(name, price, period, id);
+		plan = new Plans(name, price, period, id);
 		plans.add(plan);
 		if (plan != null) {
 			savePlan(plan, Repository.plans);			
 	}
   } catch (Exception erro){
-    System.out.println("ERRO! Voce digitou algo errado!")
+    System.out.println("ERRO! Voce digitou algo errado!");
   }
 		return plan;
   }
