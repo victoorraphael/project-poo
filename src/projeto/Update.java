@@ -12,7 +12,9 @@ public class Update{
   	String name = scan.nextLine();
 	students.forEach( stud -> {
 	  if(stud.getName().equals(name)){
-	    stud.setName(name);
+		  System.out.println("Digite o novo nome do Aluno: ");
+		  String newName = scan.nextLine();
+	    stud.setName(newName);
 	  }
 	});
   }
