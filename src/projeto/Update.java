@@ -8,7 +8,8 @@ public class Update{
   static Scanner scan = new Scanner(System.in);
 
   public static void student(ArrayList<Student> students){
-	System.out.println("Digite o nome do Estudante que deseja alterar: ");
+	if (students.size() > 0) {
+		System.out.println("Digite o nome do Estudante que deseja alterar: ");
   	String name = scan.nextLine();
 	students.forEach( stud -> {
 	  if(stud.getName().equals(name)){
@@ -17,6 +18,9 @@ public class Update{
 	    stud.setName(newName);
 	  }
 	});
+	} else {
+		System.out.println("Nenhum aluno cadastrado!");
+	}
   }
 
   public static void professor(ArrayList<Professor> professors) {

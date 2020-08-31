@@ -17,14 +17,22 @@ public class main {
     
     boolean loop = true;
     
+
     do {
+    	
     System.out.println("========== MENU ==========");
 		System.out.println("1. Cadastrar");
 		System.out.println("2. Atualizar Cadastro");
 		System.out.println("3. Buscar Cadastro");
 		System.out.println("4. Deletar Cadastro");
 		System.out.println("0. Sair");
-		int key = scan.nextInt();
+		int key = 1000;
+		int secondaryKey = 1000;
+		try {
+		key = scan.nextInt();
+		} catch (Exception erro) {
+	    	System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+	    }
 		
 		scan.nextLine();
 		
@@ -41,7 +49,12 @@ public class main {
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
 		        
-		        int secondaryKey = scan.nextInt();
+		       
+		        try {
+		        secondaryKey = scan.nextInt();
+		        } catch (Exception erro) {
+		        	System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+				}
 		        scan.nextLine();
 	        
 		        // Submenu
@@ -81,7 +94,11 @@ public class main {
 		        System.out.println("3. Turma");
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
-		        secondaryKey = scan.nextInt();
+		        try {
+			        secondaryKey = scan.nextInt();
+			        } catch (Exception erro) {
+			        	System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+					}
 		        scan.nextLine();
 		        
 		        switch(secondaryKey){
@@ -112,7 +129,11 @@ public class main {
 		        System.out.println("3. Turma");
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
-		        secondaryKey = scan.nextInt();
+		        try {
+			        secondaryKey = scan.nextInt();
+			        } catch (Exception erro) {
+			        	System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+					}
 		        
 		        switch(secondaryKey){
 		        	
@@ -123,7 +144,7 @@ public class main {
 		        	  Get.student(Repository.students, name);
 		        	  break;
 		          case 2:
-		        	  System.out.println("Digite o nome do aluno:");
+		        	  System.out.println("Digite o nome do professor:");
 		        	  String prof = scan.nextLine();
 		        	  Get.professor(Repository.professors, prof);
 		        	  break;
@@ -154,8 +175,13 @@ public class main {
 		        System.out.println("3. Turma");
 		        System.out.println("4. Arte Marcial");
 		        System.out.println("5. Planos");
-		        secondaryKey = scan.nextInt();
+		        try {
+			        secondaryKey = scan.nextInt();
+			        } catch (Exception erro) {
+			        	System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+					}
 		        
+		        scan.nextLine();
 		        switch(secondaryKey){
 		          case 1:
 					System.out.println("Digite o nome do Aluno: ");
@@ -183,8 +209,9 @@ public class main {
 				System.out.println("Digite uma opcao valida!");
 				break;
 		}
+    
 	} while (loop);
-		
+    
 	}
 
 }
