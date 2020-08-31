@@ -164,7 +164,7 @@ public class main {
 		        	  Delete.professor(id, Repository.professors);
 		        	  break;
 		          case 3:
-		            Delete.classroom();
+		            Delete.classroom(Repository.classrooms);
 		            break;
 		          case 4:
 		            Delete.martialArt(Repository.martialArts);
