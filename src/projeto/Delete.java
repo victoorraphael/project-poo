@@ -112,7 +112,7 @@ public class Delete{
 		} while (!flag);
 	}
 
-  public static void Plan(ArrayList<Plans> plans) {
+  public static void plan(ArrayList<Plans> plans) {
 		Boolean flag = false;
 		Plans plan;
 		do {
@@ -155,9 +155,5 @@ public class Delete{
 			}
 
 		} while (!flag);
-	}
-
-	public static void plan(){
-		
 	}
 }
