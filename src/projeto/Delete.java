@@ -80,18 +80,64 @@ public class Delete{
 				} else {
 					System.out.println("Você irá DELETAR a modalidade: " + martial.getModality());
 					System.out.println("Deseja Continuar [Y/N]?");
-					String Option = "Y";
-					if (Option == "Y") {
+					String option = "Y";
+					if (option.contains("Y") || option.contains("y")) {
 						modality = scan.nextLine();
-						martials.remove(martial);
+						martials.remove(modality);
+            System.out.println("Plano excluído com sucesso!")
 						flag = true;
-					} else if (Option != "Y") {
+					} else if (!option.contains("Y") || !option.contains("y")) {
 						System.out.println("Cancelado!");
 					}
 
 				}
 			} catch (Exception erro) {
 				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+				System.out.println("#################################################");
+				break;
+			}
+
+		} while (!flag);
+	}
+
+  public static void Plan(ArrayList<Plans> plans) {
+		Boolean flag = false;
+		Plans plan;
+		do {
+			System.out.println("Insira o Plano que deseja DELETAR: ");
+			String planName = scan.nextLine();
+			plan = Get.plan(plans, planName);
+
+			try {
+				if (plan == null) {
+					System.out.println("ERRO! Item não cadastrado");
+					System.out.println("1 - Tentar novamente");
+					System.out.println("0 - Sair");
+					int option = scan.nextInt();
+					scan.nextLine();
+					if (option == 0) {
+						flag = true;
+					} else if (option == 1) {
+						plan = Get.plan(plans, planName);
+					} else {
+						System.out.println("Opção invalida");
+					}
+
+				} else {
+					System.out.println("Você irá DELETAR a modalidade: " + plan.getName());
+					System.out.println("Deseja Continuar [Y/N]?");
+					String option = scan.nextLine();
+					if (option.contains("Y") || option.contains("y")) {
+						plans.remove(plan);
+            System.out.println("Plano excluído com sucesso!")
+						flag = true;
+					} else if (!option.contains("Y") || !option.contains("y")) {
+						System.out.println("Cancelado!");
+					}
+
+				}
+			} catch (Exception erro) {
+				System.out.println("ERRO! Você digitou algo errado, tente novamente!");
 				System.out.println("#################################################");
 				break;
 			}
