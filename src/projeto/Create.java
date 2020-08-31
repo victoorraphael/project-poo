@@ -61,11 +61,11 @@ public class Create{
 		System.out.println("Codigo de verificacao:");
 		int code = scan.nextInt();
 		scan.nextLine();
-		System.out.println("Insira o salário do Professor: ");
+		System.out.println("Insira o salÃ¡rio do Professor: ");
 		double salary = scan.nextDouble();
-		System.out.println("Insira a filiação do Professor: ");
+		System.out.println("Insira a filiaÃ§Ã£o do Professor: ");
 		String filiation = scan.nextLine();
-		System.out.println("Insira a federação do Professor: ");
+		System.out.println("Insira a federaÃ§Ã£o do Professor: ");
 		String federation = scan.nextLine();
 		professorId += 1;
 		boolean checkWpp = validateWpp(isWhatsapp);
@@ -241,7 +241,7 @@ public class Create{
 			flag = true;
 		}
 	    while(!(flag)){
-		      System.out.println("Esse modalidade não existe, deseja tentar novamente. [Y/N]");
+		      System.out.println("Esse modalidade nÃ£o existe, deseja tentar novamente. [Y/N]");
 		      op = scan.nextLine();
 		      if((op.equals("y")) || (op.equals("Y"))) {
 		    	  System.out.println("Digite o nome da modalidade novamente: ");
@@ -256,7 +256,7 @@ public class Create{
 		    	  return null;
 		      }	      
 		}
-	    System.out.println("Qual o horário dessa turma? \n1 - 15h\n2 - 19h\n3 - 22h");
+	    System.out.println("Qual o horÃ¡rio dessa turma? \n1 - 15h\n2 - 19h\n3 - 22h");
 	    int h = scan.nextInt();
 	    if(h==1) {
 	    	schedule = "15h";
@@ -284,12 +284,13 @@ public class Create{
 	public static Plans plan() {
 		System.out.println("Digite o nome do plano: ");
 		String name = scan.nextLine();
-		System.out.println("Digite o preço do plano: ");
+		System.out.println("Digite o preÃ§o do plano: ");
 		double price = scan.nextDouble();
 		System.out.println("Digite o periodo do plano: ");
 		String period = scan.nextLine();
-		
-		Plans p = new Plans(name, price, period, id)
+		int id = 0;
+		Plans p = new Plans(name, price, period, false, id);
+		return p;
   }
 
 }
