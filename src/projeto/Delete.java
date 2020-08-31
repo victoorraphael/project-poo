@@ -18,7 +18,7 @@ public class Delete{
   public static void professor(ArrayList<Professor> professors){
 		if(professors != null){
 			System.out.println("Insira o id do professor que deseja Deletar: ");
-			id = scan.nextInt();
+			int id = scan.nextInt();
 			int arraySize = professors.size();
 			try{
 				for (int i = 0; i < arraySize; i ++) {

@@ -208,7 +208,8 @@ public class Create{
 		String period = scan.nextLine();
 		System.out.println("Digite o Id do Plano");
 		int id = scan.nextInt();
-		plans.add(new Plans(name, price, period, id));
+		Plans plan = new Plans(name, price, period, id);
+		plans.add(plan);
 		if (plan != null) {
 			savePlan(plan, Repository.plans);			
 	}
@@ -218,9 +219,9 @@ public class Create{
 		return plan;
   }
 
-  public savePlan(Plans plan, ArrayList<Plans> plans){
-    plan.add(plans);
-  }
+	  public static void savePlan(Plans plan, ArrayList<Plans> plans){
+	    plans.add(plan);
+	  }
 
   public static Classroom classroom(ArrayList<Professor> professors, ArrayList<MartialArt> martialArts){
 		

@@ -67,7 +67,7 @@ public class main {
 		            Create.martialArt();
 		            break;
 		          case 5:
-		            Create.plan();
+		            Create.plan(Repository.plans);
 		            break;
 		          default:
 		            System.out.println("Escolha uma opcao valida!");
