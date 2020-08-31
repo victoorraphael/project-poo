@@ -7,7 +7,7 @@ public class Plans {
 	private String period;
 	private int id;
 
-    public Plans(String name, double price, String period, Boolean promocode, int id) {
+    public Plans(String name, double price, String period, int id) {
       this.name = name;
       this.price = price;
       this.period = period;

@@ -198,6 +198,7 @@ public class Create{
 
   public static Plans plan(ArrayList<Plans> plans) {
 
+    try{
 		System.out.println("Digite o nome do Plano:");
 		String name = scan.nextLine();
 		System.out.println("Digite o valor do planos, R$: ");
@@ -211,6 +212,9 @@ public class Create{
 		if (plan != null) {
 			savePlan(plan, Repository.plans);			
 	}
+  } catch (Exception erro){
+    System.out.println("ERRO! Voce digitou algo errado!")
+  }
 		return plan;
   }
 
