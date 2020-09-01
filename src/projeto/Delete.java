@@ -7,13 +7,29 @@ public class Delete{
 	
 	static Scanner scan = new Scanner(System.in);
 
-  public static void student(String name, ArrayList<Student> students){
-	  for(Student s : students){
-		  if(s.getName().equals(name)){			  
-			  students.remove(s);			  
-		  }
-	  }
-  }
+  public static void student(ArrayList<Student> students){
+	  if(students != null) {
+			Student student;
+			System.out.println("Digite o nome do estudante que deseja deletar:");
+			String nameStudent = scan.nextLine();
+			try {
+			scan.nextLine();
+				for(Student s : students) {
+					if(s.getName().contains(nameStudent)){
+						students.remove(s);
+						System.out.println("Estudante excluido com sucesso");
+						break;
+					}
+				}
+			}catch (Exception erro) {
+				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
+				System.out.println("#################################################");
+			}
+		}else {
+			System.out.println("Nao ha nenhuma turma cadastrada.");
+		}
+		
+	}
 
   public static void professor(ArrayList<Professor> professors){
 		if(professors != null){
@@ -41,14 +57,14 @@ public class Delete{
   public static void classroom(ArrayList<Classroom> classrooms){
 		if(classrooms != null) {
 			Classroom classroom;
-			System.out.println("Digite o id que deseja deletar:");
-			int id = scan.nextInt();
+			System.out.println("Digite o nome do professor da turma que deseja deletar:");
+			String name_class = scan.nextLine();
 			try {
 			scan.nextLine();
 				for(Classroom c : classrooms) {
-					if(c.getId() == id) {
+					if(c.getProfessor().getName().contains(name_class)) {
 						classrooms.remove(c);
-						System.out.println("Classe excluida com sucesso");
+						System.out.println("Turma excluida com sucesso");
 						break;
 					}
 				}
@@ -63,7 +79,7 @@ public class Delete{
 	}
   
 
-  //Deleta o elemento de MartialArt - OK!
+  
   public static void martialArt(ArrayList<MartialArt> martials) {
 		Boolean flag = false;
 		MartialArt martial;
@@ -75,7 +91,7 @@ public class Delete{
 
 			try {
 				if (martial == null) {
-					System.out.println("ERRO! Item não cadastrado");
+					System.out.println("ERRO! Item nao cadastrado");
 					System.out.println("1 - Tentar novamente");
 					System.out.println("0 - Sair");
 					int option = scan.nextInt();
@@ -86,7 +102,7 @@ public class Delete{
 						modality = scan.nextLine();
 						martial = Get.martialArt(martials, modality);
 					} else {
-						System.out.println("Opção invalida");
+						System.out.println("opcao invalida");
 					}
 
 				} else {
@@ -96,7 +112,7 @@ public class Delete{
 					if (option.contains("Y") || option.contains("y")) {
 						modality = scan.nextLine();
 						martials.remove(modality);
-						System.out.println("Plano excluído com sucesso!");
+						System.out.println("Plano excluido com sucesso!");
 						flag = true;
 					} else if (!option.contains("Y") || !option.contains("y")) {
 						System.out.println("Cancelado!");
@@ -116,13 +132,14 @@ public class Delete{
 		Boolean flag = false;
 		Plans plan;
 		do {
+			scan.nextLine();
 			System.out.println("Insira o Plano que deseja DELETAR: ");
 			String planName = scan.nextLine();
 			plan = Get.plan(plans, planName);
 
 			try {
 				if (plan == null) {
-					System.out.println("ERRO! Item não cadastrado");
+					System.out.println("ERRO! Item nao cadastrado");
 					System.out.println("1 - Tentar novamente");
 					System.out.println("0 - Sair");
 					int option = scan.nextInt();
@@ -132,16 +149,16 @@ public class Delete{
 					} else if (option == 1) {
 						plan = Get.plan(plans, planName);
 					} else {
-						System.out.println("Opção invalida");
+						System.out.println("Opcao invalida");
 					}
 
 				} else {
-					System.out.println("Você irá DELETAR a modalidade: " + plan.getName());
+					System.out.println("Voc� ira DELETAR a modalidade: " + plan.getName());
 					System.out.println("Deseja Continuar [Y/N]?");
 					String option = scan.nextLine();
 					if (option.contains("Y") || option.contains("y")) {
 						plans.remove(plan);
-						System.out.println("Plano excluído com sucesso!");
+						System.out.println("Plano excluido com sucesso!");
 						flag = true;
 					} else if (!option.contains("Y") || !option.contains("y")) {
 						System.out.println("Cancelado!");
@@ -149,7 +166,7 @@ public class Delete{
 
 				}
 			} catch (Exception erro) {
-				System.out.println("ERRO! Você digitou algo errado, tente novamente!");
+				System.out.println("ERRO! Voce digitou algo errado, tente novamente!");
 				System.out.println("#################################################");
 				break;
 			}

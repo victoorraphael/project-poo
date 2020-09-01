@@ -149,9 +149,10 @@ public class main {
 		        	  Get.professor(Repository.professors, prof);
 		        	  break;
 		          case 3:
-		        	  System.out.println("Digite o id da turma: ");
-		        	  int id = scan.nextInt();
-		            Get.classroom(Repository.classrooms, id);
+		        	  System.out.println("Digite o nome do professor: ");
+		        	  String nameClass = scan.nextLine();
+		        	  scan.nextLine();
+		            Get.classroom(Repository.classrooms, nameClass);
 		            break;
 		          case 4:
 		        	  System.out.println("Digite a modalidade da turma: ");
@@ -159,6 +160,7 @@ public class main {
 		            Get.martialArt(Repository.martialArts, modality);
 		            break;
 		          case 5:
+		        	  scan.nextLine();
 		        	  System.out.println("Insira o nome do plano: ");
 		        	  String planName = scan.nextLine();
 		            Get.plan(Repository.plans, planName);
@@ -184,9 +186,7 @@ public class main {
 		        scan.nextLine();
 		        switch(secondaryKey){
 		          case 1:
-					System.out.println("Digite o nome do Aluno: ");
-					String nome = scan.nextLine();
-		            Delete.student(nome, Repository.students);
+					Delete.student(Repository.students);
 		            break;
 		          case 2:
 		        	Delete.professor(Repository.professors);

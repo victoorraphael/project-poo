@@ -51,9 +51,9 @@ public class Get{
 		return Repository.professors;
 	}
 
-  public static Classroom classroom(ArrayList<Classroom> classrooms, int id) {
+  public static Classroom classroom(ArrayList<Classroom> classrooms, String nameClass) {
 	  for(Classroom c : classrooms) {
-		  if(c.getId() == id) {
+		  if(c.getProfessor().getName().contains(nameClass)) {
 			  return c;
 		  }
 	  }

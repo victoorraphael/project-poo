@@ -61,11 +61,12 @@ public class Create{
 		System.out.println("Codigo de verificacao:");
 		int code = scan.nextInt();
 		scan.nextLine();
-		System.out.println("Insira o salÃ¡rio do Professor: ");
+		System.out.println("Insira o salario do Professor: ");
 		double salary = scan.nextDouble();
-		System.out.println("Insira a filiaÃ§Ã£o do Professor: ");
+		scan.nextLine();
+		System.out.println("Insira a filiacao do Professor: ");
 		String filiation = scan.nextLine();
-		System.out.println("Insira a federaÃ§Ã£o do Professor: ");
+		System.out.println("Insira a federacao do Professor: ");
 		String federation = scan.nextLine();
 		professorId += 1;
 		boolean checkWpp = validateWpp(isWhatsapp);
@@ -104,7 +105,9 @@ public class Create{
 	}
 
 	public static Student student() {
-		Student student;
+		
+		Student student = null;
+		try {
 		idStudent++;
 		System.out.println("Insira o Nome Completo:");
 		String name = scan.nextLine();
@@ -171,6 +174,10 @@ public class Create{
 							);
 		if(student != null){
 		saveStudent(student, Repository.students);
+		}
+		} catch (Exception erro) {
+			System.out.println("Voc� digitou algo errado! Tente novamente.");
+			// TODO: handle exception
 		}
 		
     	return student;
@@ -282,7 +289,7 @@ public class Create{
 		    	  return null;
 		      }	      
 		}
-	    System.out.println("Qual o horÃ¡rio dessa turma? \n1 - 15h\n2 - 19h\n3 - 22h");
+	    System.out.println("Qual o horario dessa turma? \n1 - 15h\n2 - 19h\n3 - 22h");
 	    int h = scan.nextInt();
 	    if(h==1) {
 	    	schedule = "15h";

@@ -8,6 +8,7 @@ public class Update{
   static Scanner scan = new Scanner(System.in);
 
   public static void student(ArrayList<Student> students){
+	try {
 	if (students.size() > 0) {
 		System.out.println("Digite o nome do Estudante que deseja alterar: ");
   	String name = scan.nextLine();
@@ -21,19 +22,41 @@ public class Update{
 	} else {
 		System.out.println("Nenhum aluno cadastrado!");
 	}
+	} catch (Exception erro) {
+		System.out.println("Voc� digitou algo errado!");
+	}
   }
 
   public static void professor(ArrayList<Professor> professors) {
 	  
+	  try {
+	  
+	  if (professors.size() > 0) {
+			System.out.println("Digite o nome do professor que deseja alterar: ");
+	  	String name = scan.nextLine();
+		professors.forEach( prof -> {
+		  if(prof.getName().equals(name)){
+			  System.out.println("Digite o novo nome do professor: ");
+			  String newName = scan.nextLine();
+		    prof.setName(newName);
+		  }
+		});
+		} else {
+			System.out.println("Nenhum professor cadastrado!");
+		}
+	  } catch (Exception erro) {
+		System.out.println("ERRO! Voc� digitou algo errado!");	
+	  }
   }
+	  
 
   public static void classroom(ArrayList<Classroom> classrooms){
     Classroom classroom;
     String op;
     System.out.println("Digite o Id da turma:");
-	  int id_turma = scan.nextInt();
+	  String name_class = scan.nextLine();
   	boolean flag;
-  	classroom = Get.classroom(classrooms, id_turma);
+  	classroom = Get.classroom(classrooms, name_class);
   	if(classroom == null) {
 		flag = false;
   	}else {
@@ -41,12 +64,12 @@ public class Update{
   	}
 	 
     while(!(flag)){
-      System.out.println("Esse turma não existe, deseja tentar novamente. [Y/N]");
+      System.out.println("Esse turma nao existe, deseja tentar novamente. [Y/N]");
       op = scan.nextLine();
       if((op.equals("y")) || (op.equals("Y"))) {
     	  System.out.println("Digite o Id da turma novamente: ");
-    	  id_turma = scan.nextInt();
-    	  classroom = Get.classroom(classrooms, id_turma);
+    	  name_class = scan.nextLine();
+    	  classroom = Get.classroom(classrooms, name_class);
     	  if(classroom == null) {
   			flag = false;
   		}else {
@@ -60,8 +83,8 @@ public class Update{
     if(classroom != null) {
     	System.out.println("Professor: " + classroom.getProfessor().getName());
     	System.out.println("Modalidade: " + classroom.getModality().getModality());
-    	System.out.println("Horário: " + classroom.getSchedule());
-    	System.out.println("Qual campo deseja alterar? \n1-Professor\n2-Modalidade\n3-Horário");
+    	System.out.println("Horario: " + classroom.getSchedule());
+    	System.out.println("Qual campo deseja alterar? \n1-Professor\n2-Modalidade\n3-Horario");
     	int op2 = scan.nextInt();
     	scan.nextLine();
     	if(op2 == 1) {
@@ -107,7 +130,7 @@ public class Update{
     
   }
 
-  //Atualiza o elemento de MartialArt - OK!
+  
   public static void martialArt(ArrayList<MartialArt> martials) {
 		Boolean flag = false;
 		MartialArt martial;
@@ -119,7 +142,7 @@ public class Update{
 
 			try {
 				if (martial == null) {
-					System.out.println("ERRO! Item não cadastrado");
+					System.out.println("ERRO! Item nao cadastrado");
 					System.out.println("1 - Tentar novamente");
 					System.out.println("0 - Sair");
 					int option = scan.nextInt();
